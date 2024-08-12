@@ -1,6 +1,5 @@
-import React, {FC} from 'react';
-import {movieService} from "@/servise/api.servise";
-import {IMovie} from "@/models/IMovie";
+import React from 'react';
+import {movieService} from "@/servise/api.servise"
 
 const AllMoviesLayout = async ()  => {
     let movie = await movieService();
