@@ -20,5 +20,6 @@ const movieService = async (page:number):Promise<IPageMovie[]> => {
 
 
 export {
-    movieService
+    movieService,
+    baseImg
 }

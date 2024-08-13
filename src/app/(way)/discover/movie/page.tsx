@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {movieService} from "@/servise/api.servise";
+import {baseImg, movieService} from "@/servise/api.servise";
 import {IMovie} from "@/models/IMovie";
-import PaginationComponent from "@/components/PaginationComponent";
 import {useSearchParams} from "next/navigation";
+import PaginationComponent from "@/components/PaginationComponent";
+
 
 
 const AllMoviesLayout =  async () => {
@@ -13,7 +14,9 @@ const AllMoviesLayout =  async () => {
     return (
         <div>
             {
-                movies.map(value => <div key={value.id}>{value.id} {value.title}</div>)
+                movies.map(value => <div key={value.id}>
+                    <img src={baseImg + value.poster_path} alt={'image'}/>
+                    <p>{value.id} {value.title}</p></div> )
             }
             <PaginationComponent currentPage={currentPage} />
         </div>
