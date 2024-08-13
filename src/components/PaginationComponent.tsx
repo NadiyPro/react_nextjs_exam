@@ -9,15 +9,16 @@ const PaginationComponent = () => {
     const [query, setQuery] = useSearchParams();
     const [moviePage, setMoviePage] = useState<IPageMovie[]> ([]);
     useEffect(() => {
-        const currentPage = query.get('page') || '1';
+        const currentPage = +(query.get('page') || '1');
         movieService(currentPage).then(value => {
             setMoviePage(value)
+            console.log(value)
         })
     }, [query]);
     return (
         <div>
             <button onClick={() => {
-                const page = query.get('page') || '1';
+                const page = +(query.get('page')) || '1';
                 if (page) {
                     let currentPage = +page;
                     currentPage++;
@@ -25,17 +26,6 @@ const PaginationComponent = () => {
                 }
             }}>Next
             </button>
-
-            <button onClick={() => {
-                const page = query.get('page') || '1';
-                if (page) {
-                    let currentPage = +page;
-                    currentPage++;
-                    setQuery({page: currentPage})
-                }
-            }}>Prev
-            </button>
-
 
         </div>
     );

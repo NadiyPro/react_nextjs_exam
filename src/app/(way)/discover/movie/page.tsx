@@ -1,13 +1,20 @@
 import React from 'react';
 import PaginationComponent from "@/components/PaginationComponent";
+import {movieService} from "@/servise/api.servise";
+import {IMovie} from "@/models/IMovie";
+import {IPageMovie} from "@/models/IPageMovie";
 
-const AllMoviesLayout = async ()  => {
-    // let movie = await movieService();
+interface IProps{
+    movieService: IPageMovie[],
+    movie: IMovie[]
+}
+const AllMoviesLayout =  async ()  => {
+    let moviePg:IPageMovie[] = await movieService(3);
     return (
         <div>
-            {/*{*/}
-            {/*    movie.map(value => <div key={value.id}>id:{value.id} title:{value.title}</div>)*/}
-            {/*}*/}
+            {
+                moviePg.map(value => <div key={value.id}>id:{value.id} title:{value.title}</div>)
+            }
             <PaginationComponent/>
         </div>
     );

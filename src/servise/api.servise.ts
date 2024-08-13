@@ -11,11 +11,11 @@ const options = {
     }
 };
 
-const movieService = async (page:number = 1):Promise<IPageMovie[]> => {
+const movieService = async (page:number):Promise<IPageMovie[]> => {
     let movies = await fetch(base +`/discover/movie?page=${page}`, options)
         .then(response => response.json())
-    console.log(movies)
-    return movies;
+    console.log(movies.results)
+    return movies.results;
 }
 
 
