@@ -4,7 +4,7 @@ import {IMovie} from "@/models/IMovie";
 
 
 const AllMoviesLayout = async () => {
-    let movies= await movieService(3) as IMovie[];
+    let movies= await movieService() as IMovie[];
 
     return (
         <div>
