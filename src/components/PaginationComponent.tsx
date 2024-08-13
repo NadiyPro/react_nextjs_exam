@@ -5,11 +5,11 @@
 // import {movieService} from "@/servise/api.servise";
 // import {IPageMovie} from "@/models/IPageMovie";
 //
-// const PaginationComponent = () => {
+// const PaginationComponent = ({page:number}) => {
 //     const [query, setQuery] = useSearchParams();
 //     const [moviePage, setMoviePage] = useState<IPageMovie[]> ([]);
 //     useEffect(() => {
-//         const currentPage = +(query.get('page') || '1');
+//         const currentPage = +(query.get('page')) || 1;
 //         movieService(currentPage).then(value => {
 //             setMoviePage(value)
 //             console.log(value)
@@ -18,7 +18,7 @@
 //     return (
 //         <div>
 //             <button onClick={() => {
-//                 const page = +(query.get('page')) || '1';
+//                 const page = +(query.get('page')) || 1;
 //                 if (page) {
 //                     let currentPage = +page;
 //                     currentPage++;
@@ -30,5 +30,5 @@
 //         </div>
 //     );
 // };
-//
+
 // export default PaginationComponent;
