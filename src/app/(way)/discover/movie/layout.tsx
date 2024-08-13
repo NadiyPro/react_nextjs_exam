@@ -10,7 +10,7 @@ type Props = { children: React.ReactNode }
 const allMoviesLayout= ({children}: Props) => {
     return (
         <div>
-            {children}
+                {children}
         </div>
     );
 };
