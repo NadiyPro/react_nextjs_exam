@@ -1,4 +1,4 @@
-import {IMovie} from "@/models/IMovie";
+import {IPageMovie} from "@/models/IPageMovie";
 
 const base:string = 'https://api.themoviedb.org/3'; // базова для всіх окрім малюнків
 const baseImg:string = 'https://image.tmdb.org/t/p/w500'; // базова для малюнків
@@ -11,11 +11,11 @@ const options = {
     }
 };
 
-const movieService = async ():Promise<IMovie[]> => {
-    let movies = await fetch(base + '/discover/movie', options)
+const movieService = async (page:number = 1):Promise<IPageMovie[]> => {
+    let movies = await fetch(base +`/discover/movie?page=${page}`, options)
         .then(response => response.json())
-    console.log(movies.results)
-    return movies.results;
+    console.log(movies)
+    return movies;
 }
 
 
