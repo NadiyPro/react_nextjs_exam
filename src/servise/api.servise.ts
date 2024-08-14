@@ -11,7 +11,7 @@ const options = {
     }
 };
 
-const movieService = async (page:number=1):Promise<IPageMovie[]> => {
+const getMovies = async (page:number=1):Promise<IPageMovie[]> => {
     let movies = await fetch(base +`/discover/movie?page=${page}`, options)
         .then(response => response.json())
     console.log(movies.results)
@@ -20,6 +20,6 @@ const movieService = async (page:number=1):Promise<IPageMovie[]> => {
 
 
 export {
-    movieService,
+    getMovies,
     baseImg
 }

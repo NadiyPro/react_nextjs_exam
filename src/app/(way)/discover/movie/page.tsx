@@ -1,5 +1,5 @@
 import React from 'react';
-import {baseImg, movieService} from "@/servise/api.servise";
+import {baseImg, getMovies} from "@/servise/api.servise";
 import {IMovie} from "@/models/IMovie";
 import style from '@/moduleCSS/style.module.css'
 import Link from "next/link";
@@ -8,7 +8,7 @@ import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
 const AllMoviesLayout =  async ({searchParams}:Params | null) => {
    console.log(searchParams)
     let page = searchParams? searchParams.page : 1;
-    const movies = await movieService(page) as IMovie[];
+    const movies = await getMovies(page) as IMovie[];
     return (
         <div className={style.div_img_title_next}>
             <div className={style.div_title}>
@@ -21,9 +21,11 @@ const AllMoviesLayout =  async ({searchParams}:Params | null) => {
                 }
             </div>
             <div>
-                <Link href={`/discover/movie?page=${page >= 1 ? page - 1 : 1}`}>prev</Link>
-                {page}
-                <Link href={`/discover/movie?page=${page <= 1 ? 1 : +page + 1}`}>next</Link>
+                <button className={style.button_pagination}>
+                    <Link href={`/discover/movie?page=${page >= 1 ? page - 1 : 1}`}>prev</Link>
+                </button>{page}<button className={style.button_pagination}>
+                    <Link href={`/discover/movie?page=${page <= 1 ? 1 : +page + 1}`}>next</Link>
+                </button>
             </div>
         </div>
     );
