@@ -5,9 +5,9 @@ import style from '@/moduleCSS/style.module.css'
 import Link from "next/link";
 import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
 
-const AllMoviesLayout =  async ({searchParams}:Params) => {
-    console.log(searchParams.page)
-    let page = searchParams.page;
+const AllMoviesLayout =  async ({searchParams}:Params | null) => {
+   console.log(searchParams)
+    let page = searchParams? searchParams.page : 1;
     const movies = await movieService(page) as IMovie[];
     return (
         <div className={style.div_img_title_next}>
@@ -23,7 +23,7 @@ const AllMoviesLayout =  async ({searchParams}:Params) => {
             <div>
                 <Link href={`/discover/movie?page=${page >= 1 ? page - 1 : 1}`}>prev</Link>
                 {page}
-                <Link href={`/discover/movie?page=${page + 1}`}>next</Link>
+                <Link href={`/discover/movie?page=${page <= 1 ? 1 : +page + 1}`}>next</Link>
                 {/*<PaginationComponent currentPage={currentPage} />*/}
             </div>
         </div>
