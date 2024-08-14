@@ -2,11 +2,13 @@ import React from 'react';
 import {baseImg, movieService} from "@/servise/api.servise";
 import {IMovie} from "@/models/IMovie";
 import style from '@/moduleCSS/style.module.css'
-import PaginationComponent from "@/components/PaginationComponent";
+import Link from "next/link";
+import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
 
-const AllMoviesLayout =  async () => {
-    let currentPage:number = 1;
-    const movies = await movieService(currentPage) as IMovie[];
+const AllMoviesLayout =  async ({searchParams}:Params) => {
+    console.log(searchParams.page)
+    let page = searchParams.page;
+    const movies = await movieService(page) as IMovie[];
     return (
         <div className={style.div_img_title_next}>
             <div className={style.div_title}>
@@ -19,12 +21,12 @@ const AllMoviesLayout =  async () => {
                 }
             </div>
             <div>
-
-               <PaginationComponent key={currentPage} currentPage={currentPage}/>
-
+                <Link href={`/discover/movie?page=${page >= 1 ? page - 1 : 1}`}>prev</Link>
+                {page}
+                <Link href={`/discover/movie?page=${page + 1}`}>next</Link>
+                {/*<PaginationComponent currentPage={currentPage} />*/}
             </div>
         </div>
     );
 };
-
 export default AllMoviesLayout;
