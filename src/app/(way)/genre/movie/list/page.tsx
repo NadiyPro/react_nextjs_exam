@@ -7,9 +7,11 @@ const MoviesList = async () => {
     const movieList = await getGenres() as IMovieList[];
     console.log(movieList)
     return (
-        <div>
+        <div className={style.div_MoviesList}>
             {movieList.map(value =>
-                <div key={value.id}><p>{value.name}</p></div>
+                <div key={value.id}>
+                    <p className={style.p_MoviesList}>{value.name}</p>
+                </div>
             )}
         </div>
     );

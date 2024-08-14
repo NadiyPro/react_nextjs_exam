@@ -9,8 +9,8 @@ const MoviesPage =  async ({searchParams}:Params | null) => {
     let page = searchParams? searchParams.page : 1;
     const movies = await getMovies(page) as IMovie[];
     return (
-        <div className={style.div_img_title_next}>
-            <div className={style.div_title}>
+        <div className={style.div_MoviesPage}>
+            <div className={style.div_inner_MoviesPage}>
                 {
                     movies.map(value => <div key={value.id} className={style.div_img_title}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}

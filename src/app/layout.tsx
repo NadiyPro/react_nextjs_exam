@@ -20,12 +20,17 @@ export default function RootLayout({
   return (
       <html lang="en">
       <body className={style.div_body}>
-              <nav className={style.div_genres}>
-                  <MoviesList/>
-              </nav>
-              <div className={style.div_children}>
-                  {children}
-              </div>
+      <div className={style.div_search}>
+          search
+      </div>
+      <div className={style.div_gallery}>
+          <nav className={style.div_genres}>
+              <MoviesList/>
+          </nav>
+          <div className={style.div_children}>
+              {children}
+          </div>
+      </div>
       </body>
       </html>
   );
