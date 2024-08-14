@@ -12,7 +12,7 @@ const MoviesList = async () => {
 
                 {movieList.map(value =>
                     <div key={value.id} className={style.p_MoviesList}>
-                        <Link href={`/discover/movie&with_genres=${value.id}`
+                        <Link href={`/discover/movie&with_genres=${value.id.toString()}`
                         }>{value.name}</Link>
                     </div>
                 )}

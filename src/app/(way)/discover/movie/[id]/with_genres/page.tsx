@@ -7,9 +7,9 @@ import Link from "next/link";
 import {IPageMovie} from "@/models/IPageMovie";
 
 const MoviesListCard = async ({searchParams}:Params) => {
-    let with_genres = searchParams.id;
-    let page = 1;
-    let with_genres_rend = await getGenresCard(page,with_genres) as IPageMovie[]
+    let with_genres = +searchParams.id;
+    // let page = 1;
+    let with_genres_rend = await getGenresCard(with_genres) as IPageMovie[]
     return (
         <div>
             <div className={style.div_inner_MoviesPage}>
