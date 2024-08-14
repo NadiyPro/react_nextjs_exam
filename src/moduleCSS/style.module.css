@@ -1,8 +1,22 @@
 .div_body{
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.div_genres{
+    width: 70%;
+    height: 60px;
+    border: 3px solid #cc5509;
+}
+.div_children{
+    width: 70%;
+    display: flex;
+    border: 3px solid #fafa00;
 }
 .div_img_title_next{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,10 +25,10 @@
     border: 3px solid #741781;
 }
 .div_title{
-    width: 70%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    /*flex-direction: column;*/
     flex-wrap: wrap;
     border: 3px solid #1d541a;
 }

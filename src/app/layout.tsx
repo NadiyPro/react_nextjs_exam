@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import style from "@/moduleCSS/style.module.css";
+import MoviesList from "@/app/(way)/genre/movie/list/page";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,12 @@ export default function RootLayout({
   return (
       <html lang="en">
       <body className={style.div_body}>
-      {children}
+              <nav className={style.div_genres}>
+                  <MoviesList/>
+              </nav>
+              <div className={style.div_children}>
+                  {children}
+              </div>
       </body>
       </html>
   );

@@ -21,8 +21,8 @@ const getMovies = async (page:number=1):Promise<IPageMovie[]> => {
 const getGenres = async ():Promise<IMovieList[]> => {
     let movieList = await fetch(base +`/genre/movie/list`, options)
         .then(response => response.json())
-    console.log(movieList)
-    return movieList;
+    console.log(movieList.genres)
+    return movieList.genres;
 }
 
 export {
