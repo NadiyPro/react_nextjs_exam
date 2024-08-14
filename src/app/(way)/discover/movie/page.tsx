@@ -14,7 +14,7 @@ const MoviesPage =  async ({searchParams}:Params | null) => {
                 {
                     movies.map(value => <div key={value.id} className={style.div_img_title}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                       <img className={style.img_title} src={baseImg + value.poster_path} alt={'image'} />
+                        <img className={style.img_title} src={baseImg + value.poster_path} alt={'image'} />
                         <div className={style.p_MoviesPage}><p>{value.title}</p></div>
                     </div>)
                 }
@@ -23,8 +23,8 @@ const MoviesPage =  async ({searchParams}:Params | null) => {
                 <button className={style.button_pagination}>
                     <Link href={`/discover/movie?page=${page >= 1 ? page - 1 : 1}`}>prev</Link>
                 </button>{page}<button className={style.button_pagination}>
-                    <Link href={`/discover/movie?page=${page <= 1 ? 1 : +page + 1}`}>next</Link>
-                </button>
+                <Link href={`/discover/movie?page=${page <= 1 ? 1 : +page + 1}`}>next</Link>
+            </button>
             </div>
         </div>
     );
