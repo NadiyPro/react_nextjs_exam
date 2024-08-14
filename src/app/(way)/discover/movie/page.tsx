@@ -13,8 +13,9 @@ const AllMoviesLayout =  async () => {
                 {
                     movies.map(value => <div key={value.id} className={style.div_img_title}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img className={style.img_title} src={baseImg + value.poster_path} alt={'image'} />
-                        <p>{value.title}</p></div> )
+                       <img className={style.img_title} src={baseImg + value.poster_path} alt={'image'} />
+                        <div className={style.p_style}><p>{value.title}</p></div>
+                    </div>)
                 }
             </div>
             <div>
