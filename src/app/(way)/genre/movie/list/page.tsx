@@ -6,7 +6,6 @@ import Link from "next/link";
 
 const MoviesList = async () => {
     const movieList = await getGenres() as IMovieList[];
-    console.log(movieList)
     return (
         // <div className={style.div_MoviesList}>
         //     {movieList.map(value =>
@@ -19,7 +18,9 @@ const MoviesList = async () => {
             <div>
                 {movieList.map(value =>
                     <div key={value.id} className={style.p_MoviesList}>
-                        <Link href={`/movie/${value.id}/changes`}>{value.name}</Link>
+                        <Link href={{
+                            pathname:`/movie/${value.id}/changes`,
+                            query: {id: value.id}}}>{value.name}</Link>
                     </div>
                 )}
             </div>
