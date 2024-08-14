@@ -13,7 +13,7 @@ const options = {
 };
 
 const getMovies = async (page:number):Promise<IPageMovie[]> => {
-    let movies = await fetch(base +`/discover/movie?page=${page}&sort_by=popularity.desc`, options)
+    let movies = await fetch(base +`/discover/movie?page=${page}`, options)
         .then(response => response.json())
     return movies.results;
 }
@@ -23,15 +23,16 @@ const getGenres = async ():Promise<IMovieList[]> => {
         .then(response => response.json())
     return movieList.genres;
 }
-const getGenresCard = async (id:string):Promise<[]> => {
-    let movieList = await fetch(base +`/movie/${id}`, options)
+const getGenresCard = async (page:number,with_genres:number):Promise<IPageMovie[]> => {
+    let with_genres_rend = await fetch(base +`/discover/movie?page=${page}&with_genres=${with_genres}`, options)
         .then(response => response.json())
-    console.log(movieList)
-    return movieList;
+    console.log(with_genres_rend.results)
+    return with_genres_rend.results;
 }
 
 export {
     getMovies,
     baseImg,
-    getGenres
+    getGenres,
+    getGenresCard
 }

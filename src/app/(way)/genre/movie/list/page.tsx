@@ -19,8 +19,8 @@ const MoviesList = async () => {
                 {movieList.map(value =>
                     <div key={value.id} className={style.p_MoviesList}>
                         <Link href={{
-                            pathname:`/movie/${value.id}/changes`,
-                            query: {id: value.id}}}>{value.name}</Link>
+                            pathname:`/discover/movie`,
+                            query: {page:1,with_genres: value.id}}}>{value.name}</Link>
                     </div>
                 )}
             </div>
