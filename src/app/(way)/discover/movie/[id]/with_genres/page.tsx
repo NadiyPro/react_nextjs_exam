@@ -4,19 +4,24 @@ import {IMovie} from "@/models/IMovie";
 import {baseImg, getGenresCard} from "@/servise/api.servise";
 import style from "@/moduleCSS/style.module.css";
 import Link from "next/link";
+import {IPageMovie} from "@/models/IPageMovie";
 
 const MoviesListCard = async ({searchParams}:Params) => {
-    let with_genres = searchParams.with_genres ;
-let with_genres_rend = await getGenresCard(with_genres) as IMovie[]
+    let with_genres = searchParams.id;
+    let page = 1;
+    let with_genres_rend = await getGenresCard(page,with_genres) as IPageMovie[]
     return (
         <div>
             <div className={style.div_inner_MoviesPage}>
                 {
-                    with_genres_rend.map(value => <div key={value.id} className={style.div_img_title}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img className={style.img_title} src={baseImg + value.poster_path} alt={'image'}/>
-                        <div className={style.p_MoviesPage}><p>{value.title}</p></div>
-                    </div>)
+                    with_genres_rend.map(value => {
+                        value.results.map(item =>
+                            <div key={item.id} className={style.div_img_title}>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img className={style.img_title} src={baseImg + item.poster_path} alt={'image'}/>
+                                <div className={style.p_MoviesPage}><p>{item.title}</p></div>
+                            </div>)
+                    })
                 }
             </div>
             <div>

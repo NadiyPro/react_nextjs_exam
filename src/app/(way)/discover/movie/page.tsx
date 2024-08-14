@@ -30,3 +30,4 @@ const MoviesPage =  async ({searchParams}:Params | null) => {
     );
 };
 export default MoviesPage;
+
