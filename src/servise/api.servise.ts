@@ -1,4 +1,5 @@
 import {IPageMovie} from "@/models/IPageMovie";
+import {IMovieList} from "@/models/IMovieList";
 
 const base:string = 'https://api.themoviedb.org/3'; // базова для всіх окрім малюнків
 const baseImg:string = 'https://image.tmdb.org/t/p/w500'; // базова для малюнків
@@ -14,12 +15,18 @@ const options = {
 const getMovies = async (page:number=1):Promise<IPageMovie[]> => {
     let movies = await fetch(base +`/discover/movie?page=${page}`, options)
         .then(response => response.json())
-    console.log(movies.results)
     return movies.results;
 }
 
+const getGenres = async ():Promise<IMovieList[]> => {
+    let movieList = await fetch(base +`/genre/movie/list`, options)
+        .then(response => response.json())
+    console.log(movieList)
+    return movieList;
+}
 
 export {
     getMovies,
-    baseImg
+    baseImg,
+    getGenres
 }

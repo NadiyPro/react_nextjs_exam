@@ -6,7 +6,6 @@ import Link from "next/link";
 import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
 
 const MoviesPage =  async ({searchParams}:Params | null) => {
-   console.log(searchParams)
     let page = searchParams? searchParams.page : 1;
     const movies = await getMovies(page) as IMovie[];
     return (

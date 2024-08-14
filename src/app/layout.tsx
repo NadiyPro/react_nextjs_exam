@@ -21,9 +21,6 @@ export default function RootLayout({
       <body className={style.div_body}>
       {children}
       </body>
-      {/*<body className={inter.className}>*/}
-      {/*    {children}*/}
-      {/*</body>*/}
       </html>
   );
 }
