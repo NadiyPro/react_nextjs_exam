@@ -1,11 +1,11 @@
-import AllMoviesLayout from "@/app/(way)/discover/movie/page";
 import React from "react";
+import MoviesPage from "@/app/(way)/discover/movie/page";
 
 
 const Home =  () => {
   return (
       <main>
-          <AllMoviesLayout/>
+          <MoviesPage/>
       </main>
   );
 }

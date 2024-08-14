@@ -5,7 +5,7 @@ import style from '@/moduleCSS/style.module.css'
 import Link from "next/link";
 import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
 
-const AllMoviesLayout =  async ({searchParams}:Params | null) => {
+const MoviesPage =  async ({searchParams}:Params | null) => {
    console.log(searchParams)
     let page = searchParams? searchParams.page : 1;
     const movies = await getMovies(page) as IMovie[];
@@ -30,4 +30,4 @@ const AllMoviesLayout =  async ({searchParams}:Params | null) => {
         </div>
     );
 };
-export default AllMoviesLayout;
+export default MoviesPage;
