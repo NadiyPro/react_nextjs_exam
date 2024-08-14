@@ -6,9 +6,8 @@ import style from "@/moduleCSS/style.module.css";
 import Link from "next/link";
 
 const MoviesListCard = async ({searchParams}:Params) => {
-    let with_genres = searchParams.with_genres;
-    let page = searchParams.page;
-let with_genres_rend = await getGenresCard(page,with_genres) as IMovie[]
+    let with_genres = searchParams.with_genres ;
+let with_genres_rend = await getGenresCard(with_genres) as IMovie[]
     return (
         <div>
             <div className={style.div_inner_MoviesPage}>
