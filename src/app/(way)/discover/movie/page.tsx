@@ -24,7 +24,6 @@ const AllMoviesLayout =  async ({searchParams}:Params | null) => {
                 <Link href={`/discover/movie?page=${page >= 1 ? page - 1 : 1}`}>prev</Link>
                 {page}
                 <Link href={`/discover/movie?page=${page <= 1 ? 1 : +page + 1}`}>next</Link>
-                {/*<PaginationComponent currentPage={currentPage} />*/}
             </div>
         </div>
     );
