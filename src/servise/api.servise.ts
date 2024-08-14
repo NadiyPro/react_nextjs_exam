@@ -13,7 +13,7 @@ const options = {
 };
 
 const getMovies = async (page:number):Promise<IPageMovie[]> => {
-    let movies = await fetch(base +`/discover/movie?page=${page}`, options)
+    let movies = await fetch(base +`/discover/movie?page=${page}&sort_by=popularity.desc`, options)
         .then(response => response.json())
     return movies.results;
 }
