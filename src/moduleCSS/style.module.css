@@ -58,6 +58,10 @@
     height: 30px;
     margin: 20px;
 }
+.p_MoviesPage{
+    display: flex;
+    text-align: center;
+}
 /*******genres*****/
 .div_genres{
     width: 15%;
