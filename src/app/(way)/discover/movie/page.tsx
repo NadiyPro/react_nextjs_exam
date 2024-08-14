@@ -23,7 +23,7 @@ const MoviesPage =  async ({searchParams}:Params | null) => {
                 <button className={style.button_pagination}>
                     <Link href={`/discover/movie?page=${page >= 1 ? page - 1 : 1}`}>prev</Link>
                 </button>{page}<button className={style.button_pagination}>
-                <Link href={`/discover/movie?page=${page <= 1 ? 1 : +page + 1}`}>next</Link>
+                <Link href={`/discover/movie?page=${page < 1 ? 1 : +page + 1}`}>next</Link>
             </button>
             </div>
         </div>
