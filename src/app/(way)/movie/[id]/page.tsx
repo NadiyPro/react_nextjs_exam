@@ -6,7 +6,7 @@ import {IMovieInfo} from "@/models/IMovieInfo";
 const MovieInfo = async ({searchParams}:Params) => {
     let movie_id = +searchParams.id;
     let movie_info = await getMovieInfo(movie_id) as IMovieInfo;
-    console.log(movie_info.title)
+    // console.log(movie_info.title)
 
     return (
         <div>
