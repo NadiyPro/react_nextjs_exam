@@ -32,7 +32,7 @@ const getGenresCard = async (with_genres:string,page:number):Promise<IPageMovie[
     return with_genres_rend.results;
 }
 
-const getMovieInfo = async (movie_id:number):Promise<IMovieInfo[]> => {
+const getMovieInfo = async (movie_id:number):Promise<IMovieInfo> => {
     let movieInfo = await fetch(base +`/movie/${movie_id}`, options)
         .then(response => response.json())
     console.log(movieInfo)
