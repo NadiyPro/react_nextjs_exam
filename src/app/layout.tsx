@@ -20,9 +20,6 @@ export default function RootLayout({
   return (
       <html lang="en">
       <body className={style.div_body}>
-      <div className={style.div_search}>
-          search
-      </div>
       <div className={style.div_gallery}>
           <nav className={style.div_genres}>
               <MoviesList/>

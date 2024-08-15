@@ -37,6 +37,12 @@ const getMovieInfo = async (movie_id:number):Promise<IMovieInfo> => {
         .then(response => response.json())])
     return movieInfo;
 }
+const getSearch= async (query:string,page:number):Promise<IMovieInfo> => {
+    let search_get = await fetch(base + `/search/movie?query=${query}&page=${page}`, options)
+        .then(response => response.json())
+    return search_get;
+}
+
 
 const getVideo = async (movie_id:number):Promise<Result[]> => {
     let [movieVideo] = await Promise.all([fetch(base + `/movie/${movie_id}/videos`, options)
@@ -50,5 +56,6 @@ export {
     getGenres,
     getGenresCard,
     getMovieInfo,
-    getVideo
+    getVideo,
+    getSearch
 }

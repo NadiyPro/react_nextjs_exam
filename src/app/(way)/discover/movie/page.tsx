@@ -1,25 +1,35 @@
 import React from 'react';
-import {baseImg, getGenresCard, getMovies} from "@/servise/api.servise";
+import {baseImg, getGenresCard, getMovies, getSearch} from "@/servise/api.servise";
 import {IMovie} from "@/models/IMovie";
 import style from '@/moduleCSS/style.module.css'
 import Link from "next/link";
+import SearchPage from "@/app/(way)/search/movie/page";
+import {ISearch} from "@/models/ISearch";
 interface IProps{
     searchParams:{
         page?:number
         with_genres?:string
+        search_get?:string
     }
     movies:IMovie[]
 }
 
 
-const MoviesPage =  async ({  searchParams: {page, with_genres}}:IProps) => {
+const MoviesPage =  async ({searchParams: {page, with_genres, search_get}}:IProps) => {
 
-    let movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[]
+    let movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[] &&
+    search_get? await getSearch(search_get, +page) as IMovie[] : await getMovies(+page) as IMovie[]
     let paginationPrev:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page > 1 ? page - 1 : 1}` : `/discover/movie?page=${page > 1 ? page - 1 : 1}`
     let paginationNext:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page < 1 ? 1 : +page + 1}` : `/discover/movie?page=${page < 1 ? 1 : +page + 1}`
 
     return (
         <div className={style.div_MoviesPage}>
+            <div className={style.div_search}>
+                <form>
+                    <label><input type={"text"} name={'search'} placeholder={'Enter the name of the movie'} /></label>
+                    <button >Search</button>
+                </form>
+            </div>
             <div className={style.div_inner_MoviesPage}>
                 { movies &&
                     movies.map(value => <div key={value.id} className={style.div_img_title}>
