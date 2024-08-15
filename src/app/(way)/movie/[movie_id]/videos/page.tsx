@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const VideosPage = async ({ params }: { params: { movie_id: string }}) => {
     let movie_id:number = +params.movie_id;
-    let movie_video= await getVideo(+movie_id) as Result[];
+    let movie_video:Result[]= await getVideo(+movie_id);
     let name:string[]=  movie_video.map(value => value.name);
     let key:string[] =  movie_video.map(value => value.key);
 
