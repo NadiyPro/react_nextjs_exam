@@ -30,12 +30,16 @@ let paginationPrev:string = with_genres? `/discover/movie?with_genres=${with_gen
             </div>
             <div>
                 <button className={style.button_pagination}>
-                    <Link href={paginationPrev}>prev</Link>
+                    <Link href={paginationPrev}>{page > 1 ? page - 1 : 1}</Link>
                 </button>
                 {page}
                 <button className={style.button_pagination}>
-                    <Link href={paginationNext}>next</Link>
+                    <Link href={paginationNext}>{page < 1 ? 1 : +page + 1}</Link>
                 </button>
+                <button className={style.button_pagination}>
+                    <Link href={'/discover/movie?page=1'}>Home</Link>
+                </button>
+
             </div>
         </div>
     );
