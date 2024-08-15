@@ -15,8 +15,8 @@ interface IProps{
 const MoviesPage =  async ({  searchParams: {page, with_genres}}:IProps) => {
 
     let movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[]
-let paginationPrev = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page > 1 ? page - 1 : 1}` : `/discover/movie?page=${page > 1 ? page - 1 : 1}`
-    let paginationNext = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page < 1 ? 1 : +page + 1}` : `/discover/movie?page=${page < 1 ? 1 : +page + 1}`
+let paginationPrev:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page > 1 ? page - 1 : 1}` : `/discover/movie?page=${page > 1 ? page - 1 : 1}`
+    let paginationNext:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page < 1 ? 1 : +page + 1}` : `/discover/movie?page=${page < 1 ? 1 : +page + 1}`
     return (
         <div className={style.div_MoviesPage}>
             <div className={style.div_inner_MoviesPage}>
@@ -36,11 +36,6 @@ let paginationPrev = with_genres? `/discover/movie?with_genres=${with_genres}&pa
                 <button className={style.button_pagination}>
                     <Link href={paginationNext}>next</Link>
                 </button>
-                {/*    <button className={style.button_pagination}>*/}
-                {/*        <Link href={`/discover/movie?page=${page > 1 ? page - 1 : 1}`}>prev</Link>*/}
-                {/*    </button>{page}<button className={style.button_pagination}>*/}
-                {/*    <Link href={`/discover/movie?page=${page < 1 ? 1 : +page + 1}`}>next</Link>*/}
-                {/*</button>*/}
             </div>
         </div>
     );
