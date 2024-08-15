@@ -28,23 +28,6 @@ const MoviesPage =  async ({  searchParams: {page, with_genres}}:IProps) => {
                         <div className={style.p_MoviesPage}><p>{value.title}</p></div>
                     </div>)
                 }
-
-
-                {/*{ movies &&*/}
-                {/*    movies.map(value => <div key={value.id} className={style.div_img_title}>*/}
-                {/*        /!* eslint-disable-next-line @next/next/no-img-element *!/*/}
-                {/*        <Link href={`/movie/${value.id}`}><img className={style.img_title} src={baseImg + value.poster_path} alt={'image'}/></Link>*/}
-                {/*        <div className={style.p_MoviesPage}><p>{value.title}</p></div>*/}
-                {/*    </div>)*/}
-                {/*}*/}
-
-                {/*{ movies &&*/}
-                {/*    movies.map(value => <div key={value.id} className={style.div_img_title}>*/}
-                {/*        /!* eslint-disable-next-line @next/next/no-img-element *!/*/}
-                {/*        <Link href={`/movie/${value.id}`}><img className={style.img_title} src={baseImg + value.poster_path} alt={'image'}/></Link>*/}
-                {/*        <div className={style.p_MoviesPage}><p>{value.title}</p></div>*/}
-                {/*    </div>)*/}
-                {/*}*/}
             </div>
             <div>
                 <button className={style.button_pagination}>
