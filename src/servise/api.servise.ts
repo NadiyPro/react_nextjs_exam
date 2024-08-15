@@ -26,7 +26,7 @@ const getGenres = async ():Promise<IMovieList[]> => {
     return movieList.genres;
 }
 const getGenresCard = async (with_genres:string,page:number=1):Promise<IPageMovie[]> => {
-    let with_genres_rend = await fetch(base +`/discover/movie?with_genres=${with_genres}?page=${page}`, options)
+    let with_genres_rend = await fetch(base +`/discover/movie?with_genres=${with_genres}&page=${page}`, options)
         .then(response => response.json())
     console.log(with_genres_rend.results)
     return with_genres_rend.results;

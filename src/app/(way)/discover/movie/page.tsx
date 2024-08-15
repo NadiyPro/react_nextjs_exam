@@ -15,19 +15,24 @@ interface IProps{
 const MoviesPage =  async ({  searchParams: {page, with_genres}}:IProps) => {
 
     let movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[]
-
+    // let movie_id = await getMovieInfo()
     return (
         <div className={style.div_MoviesPage}>
             <div className={style.div_inner_MoviesPage}>
-
-
                 { movies &&
-                        movies.map(value => <div key={value.id} className={style.div_img_title}>
+                    movies.map(value => <div key={value.id} className={style.div_img_title}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img className={style.img_title} src={baseImg + value.poster_path} alt={'image'} />
+                        <Link href={`/movie/${value.id}`}><img className={style.img_title} src={baseImg + value.poster_path} alt={'image'}/></Link>
                         <div className={style.p_MoviesPage}><p>{value.title}</p></div>
                     </div>)
                 }
+                {/*{ movies &&*/}
+                {/*        movies.map(value => <div key={value.id} className={style.div_img_title}>*/}
+                {/*        /!* eslint-disable-next-line @next/next/no-img-element *!/*/}
+                {/*        <img className={style.img_title} src={baseImg + value.poster_path} alt={'image'}/>*/}
+                {/*        <div className={style.p_MoviesPage}><p>{value.title}</p></div>*/}
+                {/*    </div>)*/}
+                {/*}*/}
             </div>
             <div>
                 <button className={style.button_pagination}>
