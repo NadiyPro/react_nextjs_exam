@@ -48,11 +48,11 @@ const MoviesPage =  async ({  searchParams: {page, with_genres}}:IProps) => {
             </div>
             <div>
                 <button className={style.button_pagination}>
-                    <Link href={paginationPrev}>{page > 1 ? page - 1 : 1}</Link>
+                    <Link href={paginationPrev}>Prev {page > 1 ? page - 1 : 1}</Link>
                 </button>
                 {page}
                 <button className={style.button_pagination}>
-                    <Link href={paginationNext}>{page < 1 ? 1 : +page + 1}</Link>
+                    <Link href={paginationNext}>Next {page < 1 ? 1 : +page + 1}</Link>
                 </button>
                 <button className={style.button_pagination}>
                     <Link href={'/discover/movie?page=1'}>Home</Link>
