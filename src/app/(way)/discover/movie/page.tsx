@@ -46,4 +46,3 @@ const MoviesPage =  async ({  searchParams: {page, with_genres}}:IProps) => {
     );
 };
 export default MoviesPage;
-
