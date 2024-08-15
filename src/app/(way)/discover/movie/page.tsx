@@ -15,22 +15,15 @@ interface IProps{
 
 
 const MoviesPage =  async ({  searchParams: {page, with_genres}}:IProps) => {
-    // let pageL = page ? page : 1;
-    let movies: IMovie[] = [];
 
-    if (with_genres) {
-        movies = await getGenresCard(with_genres, +page) as IMovie[];
-    } else {
-        movies = await getMovies(+page) as IMovie[];
-    }
+    let movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[]
 
-    // let with_genres_rend = await getGenresCard(with_genres) as IMovie[]
     return (
         <div className={style.div_MoviesPage}>
             <div className={style.div_inner_MoviesPage}>
 
 
-                {
+                { movies &&
                         movies.map(value => <div key={value.id} className={style.div_img_title}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img className={style.img_title} src={baseImg + value.poster_path} alt={'image'} />
@@ -40,9 +33,9 @@ const MoviesPage =  async ({  searchParams: {page, with_genres}}:IProps) => {
             </div>
             <div>
                 <button className={style.button_pagination}>
-                    <Link href={`/discover/movie?page=${page >= 1 ? page - 1 : 1}` || `/discover/movie?with_genres=${with_genres}?page=${page >= 1 ? page - 1 : 1}`}>prev</Link>
+                    <Link href={`/discover/movie?page=${page > 1 ? page - 1 : 1}` || `/discover/movie&with_genres=${with_genres}?page=${page > 1 ? page - 1 : 1}`}>prev</Link>
                 </button>{page}<button className={style.button_pagination}>
-                <Link href={`/discover/movie?page=${page < 1 ? 1 : +page + 1}`|| `/discover/movie?with_genres=${with_genres}?page=${page < 1 ? 1 : +page + 1}`}>next</Link>
+                <Link href={`/discover/movie?page=${page < 1 ? 1 : +page + 1}`|| `/discover/movie&with_genres=${with_genres}?page=${page < 1 ? 1 : +page + 1}`}>next</Link>
             </button>
             </div>
         </div>

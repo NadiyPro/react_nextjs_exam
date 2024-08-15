@@ -5,7 +5,7 @@ import style from "@/moduleCSS/style.module.css";
 import Link from "next/link";
 
 const MoviesList = async () => {
-    const movieList = await getGenres() as IMovieList[];
+    const movieList:IMovieList[] = await getGenres();
     return (
         <div className={style.div_MoviesList}>
             <div>
@@ -17,13 +17,6 @@ const MoviesList = async () => {
                         }}>{value.name}</Link>
                     </div>
                 )}
-                
-                {/*{movieList.map(value =>*/}
-                {/*    <div key={value.id} className={style.p_MoviesList}>*/}
-                {/*        <Link href={`/discover/movie&with_genres=${value.id.toString()}`*/}
-                {/*        }>{value.name}</Link>*/}
-                {/*    </div>*/}
-                {/*)}*/}
             </div>
         </div>
 
