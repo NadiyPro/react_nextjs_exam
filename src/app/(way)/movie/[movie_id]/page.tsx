@@ -1,7 +1,6 @@
 import React from 'react';
-import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
 import {baseImg, getMovieInfo} from "@/servise/api.servise";
-import {Genre, IMovieInfo} from "@/models/IMovieInfo";
+import {IMovieInfo} from "@/models/IMovieInfo";
 import style from "@/moduleCSS/style.module.css";
 import Link from "next/link";
 
