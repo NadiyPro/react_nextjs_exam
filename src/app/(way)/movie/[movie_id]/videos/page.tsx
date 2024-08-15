@@ -10,7 +10,6 @@ const VideosPage = async ({ params }: { params: { movie_id: string }}) => {
     let name:string[]=  movie_video.map(value => value.name);
     let key:string[] =  movie_video.map(value => value.key);
 
-
     return (
         <div>
 
