@@ -1,5 +1,6 @@
 import {IPageMovie} from "@/models/IPageMovie";
 import {IMovieList} from "@/models/IMovieList";
+import {IMovieInfo} from "@/models/IMovieInfo";
 
 
 const base:string = 'https://api.themoviedb.org/3'; // базова для всіх окрім малюнків
@@ -31,9 +32,17 @@ const getGenresCard = async (with_genres:string,page:number=1):Promise<IPageMovi
     return with_genres_rend.results;
 }
 
+const getMovieInfo = async (movie_id:number):Promise<IMovieInfo[]> => {
+    let movieInfo = await fetch(base +`/movie/${movie_id}`, options)
+        .then(response => response.json())
+    console.log(movieInfo)
+    return movieInfo;
+}
+
 export {
     getMovies,
     baseImg,
     getGenres,
-    getGenresCard
+    getGenresCard,
+    getMovieInfo
 }
