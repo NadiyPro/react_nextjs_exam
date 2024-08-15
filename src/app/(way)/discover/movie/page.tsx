@@ -3,8 +3,6 @@ import {baseImg, getGenresCard, getMovies} from "@/servise/api.servise";
 import {IMovie} from "@/models/IMovie";
 import style from '@/moduleCSS/style.module.css'
 import Link from "next/link";
-import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
-import {IPageMovie} from "@/models/IPageMovie";
 interface IProps{
     searchParams:{
         page?:number
@@ -33,9 +31,9 @@ const MoviesPage =  async ({  searchParams: {page, with_genres}}:IProps) => {
             </div>
             <div>
                 <button className={style.button_pagination}>
-                    <Link href={`/discover/movie?page=${page > 1 ? page - 1 : 1}` || `/discover/movie&with_genres=${with_genres}?page=${page > 1 ? page - 1 : 1}`}>prev</Link>
+                    <Link href={`/discover/movie?page=${page > 1 ? page - 1 : 1}`}>prev</Link>
                 </button>{page}<button className={style.button_pagination}>
-                <Link href={`/discover/movie?page=${page < 1 ? 1 : +page + 1}`|| `/discover/movie&with_genres=${with_genres}?page=${page < 1 ? 1 : +page + 1}`}>next</Link>
+                <Link href={`/discover/movie?page=${page < 1 ? 1 : +page + 1}`}>next</Link>
             </button>
             </div>
         </div>

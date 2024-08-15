@@ -13,7 +13,7 @@ const MoviesList = async () => {
                     <div key={value.id} className={style.p_MoviesList}>
                         <Link href={{
                             pathname:'/discover/movie',
-                            query:{with_genres:value.id}
+                            query:{with_genres:value.id,page:1}
                         }}>{value.name}</Link>
                     </div>
                 )}
