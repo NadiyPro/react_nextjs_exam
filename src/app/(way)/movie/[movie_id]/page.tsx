@@ -36,15 +36,21 @@ const MovieInfo = async ({ params }: { params: { movie_id: string } }) => {
                 </div>
             </div>
 
-
             <div>
-                <h3>{movie_info.tagline}</h3>
-                <p>{movie_info.overview}</p>
+                <div>
+                    <h3>{movie_info.tagline}</h3>
+                    <p>{movie_info.overview}</p>
+                </div>
+                <div>
+                    <button className={style.button_pagination}>
+                        <Link href={`/movie/${movie_id}/videos`}>Video</Link>
+                    </button>
+                    <button className={style.button_pagination}>
+                        <Link href={'/discover/movie?page=1'}>Home</Link>
+                    </button>
+                </div>
             </div>
 
-            <div>
-                відео
-            </div>
         </div>
     );
 };
