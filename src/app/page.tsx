@@ -7,7 +7,7 @@ import MoviesPage from "@/app/(way)/discover/movie/page";
 const Home =  () => {
   return (
       <div>
-              <MoviesPage/>
+              <MoviesPage searchParams={{ page: 1 }} movies={[]} />
       </div>
   );
 }

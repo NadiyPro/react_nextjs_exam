@@ -9,13 +9,21 @@ const MoviesList = async () => {
     return (
         <div className={style.div_MoviesList}>
             <div>
-
                 {movieList.map(value =>
                     <div key={value.id} className={style.p_MoviesList}>
-                        <Link href={`/discover/movie&with_genres=${value.id.toString()}`
-                        }>{value.name}</Link>
+                        <Link href={{
+                            pathname:'/discover/movie',
+                            query:{with_genres:value.id}
+                        }}>{value.name}</Link>
                     </div>
                 )}
+                
+                {/*{movieList.map(value =>*/}
+                {/*    <div key={value.id} className={style.p_MoviesList}>*/}
+                {/*        <Link href={`/discover/movie&with_genres=${value.id.toString()}`*/}
+                {/*        }>{value.name}</Link>*/}
+                {/*    </div>*/}
+                {/*)}*/}
             </div>
         </div>
 

@@ -1,18 +1,37 @@
 import React from 'react';
-import {baseImg, getMovies} from "@/servise/api.servise";
+import {baseImg, getGenresCard, getMovies} from "@/servise/api.servise";
 import {IMovie} from "@/models/IMovie";
 import style from '@/moduleCSS/style.module.css'
 import Link from "next/link";
 import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
+import {IPageMovie} from "@/models/IPageMovie";
+interface IProps{
+    searchParams:{
+        page?:number
+        with_genres?:string
+    }
+    movies:IMovie[]
+}
 
-const MoviesPage =  async ({searchParams}:Params | null) => {
-    let page = searchParams? searchParams.page : 1;
-    const movies = await getMovies(page) as IMovie[];
+
+const MoviesPage =  async ({  searchParams: {page, with_genres}}:IProps) => {
+    // let pageL = page ? page : 1;
+    let movies: IMovie[] = [];
+
+    if (with_genres) {
+        movies = await getGenresCard(with_genres, +page) as IMovie[];
+    } else {
+        movies = await getMovies(+page) as IMovie[];
+    }
+
+    // let with_genres_rend = await getGenresCard(with_genres) as IMovie[]
     return (
         <div className={style.div_MoviesPage}>
             <div className={style.div_inner_MoviesPage}>
+
+
                 {
-                    movies.map(value => <div key={value.id} className={style.div_img_title}>
+                        movies.map(value => <div key={value.id} className={style.div_img_title}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img className={style.img_title} src={baseImg + value.poster_path} alt={'image'} />
                         <div className={style.p_MoviesPage}><p>{value.title}</p></div>
@@ -21,9 +40,9 @@ const MoviesPage =  async ({searchParams}:Params | null) => {
             </div>
             <div>
                 <button className={style.button_pagination}>
-                    <Link href={`/discover/movie?page=${page >= 1 ? page - 1 : 1}`}>prev</Link>
+                    <Link href={`/discover/movie?page=${page >= 1 ? page - 1 : 1}` || `/discover/movie?with_genres=${with_genres}?page=${page >= 1 ? page - 1 : 1}`}>prev</Link>
                 </button>{page}<button className={style.button_pagination}>
-                <Link href={`/discover/movie?page=${page < 1 ? 1 : +page + 1}`}>next</Link>
+                <Link href={`/discover/movie?page=${page < 1 ? 1 : +page + 1}`|| `/discover/movie?with_genres=${with_genres}?page=${page < 1 ? 1 : +page + 1}`}>next</Link>
             </button>
             </div>
         </div>
