@@ -7,13 +7,11 @@ interface IProps{
     searchParams:{
         page?:number
         with_genres?:string
-        query?:string
     }
     movies:IMovie[]
 }
 
-
-const MoviesPage =  async ({searchParams: {page, with_genres, query}}:IProps) => {
+const MoviesPage =  async ({searchParams: {page, with_genres}}:IProps) => {
 // let searchQuery:ISearch[] = query? await getSearch(query) : '';
     let movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[]
     let paginationPrev:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page > 1 ? page - 1 : 1}` : `/discover/movie?page=${page > 1 ? page - 1 : 1}`
@@ -22,7 +20,7 @@ const MoviesPage =  async ({searchParams: {page, with_genres, query}}:IProps) =>
     return (
         <div className={style.div_MoviesPage}>
             <div className={style.div_search}>
-                <form method={'GET'} action={'/search/keyword'}>
+                <form method={'GET'} action={'/search/movie'}>
                     <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>
                     <button type={'submit'}>Search</button>
                 </form>

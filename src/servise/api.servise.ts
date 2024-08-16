@@ -2,7 +2,7 @@ import {IPageMovie} from "@/models/IPageMovie";
 import {IMovieList} from "@/models/IMovieList";
 import {IMovieInfo} from "@/models/IMovieInfo";
 import {Result} from "@/models/IVideo";
-import {ISearch} from "@/models/ISearch";
+import {ISearchPage} from "@/models/ISearch";
 
 
 const base:string = 'https://api.themoviedb.org/3'; // базова для всіх окрім малюнків
@@ -39,19 +39,11 @@ const getMovieInfo = async (movie_id:number):Promise<IMovieInfo> => {
     return movieInfo;
 }
 
-const getSearch= async (query:string):Promise<ISearch[]> => {
-    let search_get = await fetch(base + `/search/keyword?query=${query}`, options)
+const getSearchPage= async (query:string):Promise<ISearchPage[]> => {
+    let search_get = await fetch(base + `/search/movie?query=${query}`, options)
         .then(response => response.json())
-    // console.log(search_get.results)
     return search_get.results;
 }
-// const getSearchPage= async (query:string,page:number):Promise<ISearch[]> => {
-//     let search_get = await fetch(base + `/search/keyword?query=${query}&page=${page}`, options)
-//         .then(response => response.json())
-//     console.log(search_get.results)
-//     return search_get.results;
-// }
-
 
 const getVideo = async (movie_id:number):Promise<Result[]> => {
     let [movieVideo] = await Promise.all([fetch(base + `/movie/${movie_id}/videos`, options)
@@ -67,5 +59,5 @@ export {
     getGenresCard,
     getMovieInfo,
     getVideo,
-    getSearch
+    getSearchPage
 }
