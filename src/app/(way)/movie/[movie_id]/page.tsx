@@ -15,6 +15,12 @@ const MovieInfo = async ({ params }: { params: { movie_id: string } }) => {
 
     return (
         <div>
+            <div className={style.div_search}>
+                <form method={'GET'} action={'/search/movie'}>
+                    <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>
+                    <button type={'submit'}>Search</button>
+                </form>
+            </div>
             <div>
                 <div>
                     <div>

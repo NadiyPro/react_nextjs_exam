@@ -14,22 +14,29 @@ const VideosPage = async ({ params }: { params: { movie_id: string }}) => {
 
     return (
         <div>
-
-            <iframe key={`${keyRang}`}
-                    src={`https://www.youtube.com/embed/${keyRang}}`}
-                    title = {`${nameRang}`}
-                    width="560"
-                    height="315"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-            />
-            <button className={style.button_pagination}>
-                <Link href={`/movie/${movie_id}`}>Back</Link>
-            </button>
-            <button className={style.button_pagination}>
-                <Link href={'/discover/movie?page=1'}>Home</Link>
-            </button>
+            <div className={style.div_search}>
+                <form method={'GET'} action={'/search/movie'}>
+                    <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>
+                    <button type={'submit'}>Search</button>
+                </form>
+            </div>
+            <div>
+                <iframe key={`${keyRang}`}
+                        src={`https://www.youtube.com/embed/${keyRang}}`}
+                        title={`${nameRang}`}
+                        width="560"
+                        height="315"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                />
+                <button className={style.button_pagination}>
+                    <Link href={`/movie/${movie_id}`}>Back</Link>
+                </button>
+                <button className={style.button_pagination}>
+                    <Link href={'/discover/movie?page=1'}>Home</Link>
+                </button>
+            </div>
         </div>
     );
 };
