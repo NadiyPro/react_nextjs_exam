@@ -6,12 +6,15 @@ const SearchPage = async () => {
     // const query:ISearch[] = await getSearch(search);
     return (
         <div>
-            <div className={style.div_search}>
-                <form action={getSearch}>
-                    <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>
-                    <button>Search</button>
-                </form>
-            </div>
+
+
+
+            {/*<div className={style.div_search}>*/}
+            {/*    <form action={getSearch}>*/}
+            {/*        <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>*/}
+            {/*        <button>Search</button>*/}
+            {/*    </form>*/}
+            {/*</div>*/}
         </div>
     );
 };

@@ -22,12 +22,12 @@ const MoviesPage =  async ({searchParams: {page, with_genres, query}}:IProps) =>
 
     return (
         <div className={style.div_MoviesPage}>
-            {/*<div className={style.div_search}>*/}
-            {/*    <form action={movies}>*/}
-            {/*        <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>*/}
-            {/*        <button>Search</button>*/}
-            {/*    </form>*/}
-            {/*</div>*/}
+            <div className={style.div_search}>
+                <form method={'GET'} action={'/search/keyword'}>
+                    <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>
+                    <button type={'submit'}>Search</button>
+                </form>
+            </div>
             <div className={style.div_inner_MoviesPage}>
                 {movies &&
                     movies.map(value => <div key={value.id} className={style.div_img_title}>
