@@ -12,9 +12,6 @@ interface ISearchProps{
 const MovieSearchPage = async ({searchParams: {query,page}}:ISearchProps) => {
     const pageSearch = page? +page : 1;
     const search:ISearchPageResult[] | string = query? await getSearchPage(query,pageSearch) as ISearchPageResult[] : 'There are no search results for your request';
-    // const pageSearch:ISearchPageResult[] | string = query? await getSearchPage(query) as ISearchPageResult[] : 'There are no search results for your request';
-    // let paginationPrev:string = query? `/search/movie?query=${query}&page=${page > 1 ? page - 1 : 1}` : `/discover/movie?page=${page > 1 ? page - 1 : 1}`
-    // let paginationNext:string = query? `/search/movie?query=${query}&page=${page < 1 ? 1 : +page + 1}` : `/discover/movie?page=${page < 1 ? 1 : +page + 1}`
 console.log(search)
 
     return (
