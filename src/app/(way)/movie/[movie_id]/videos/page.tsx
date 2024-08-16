@@ -3,6 +3,7 @@ import {getVideo} from "@/servise/api.servise";
 import {Result} from "@/models/IVideo";
 import style from "@/moduleCSS/style.module.css";
 import Link from "next/link";
+import FormComponent from "@/component/FormComponent";
 
 const VideosPage = async ({ params }: { params: { movie_id: string }}) => {
     let movie_id:number = +params.movie_id;
@@ -14,12 +15,7 @@ const VideosPage = async ({ params }: { params: { movie_id: string }}) => {
 
     return (
         <div>
-            <div className={style.div_search}>
-                <form method={'GET'} action={'/search/movie'}>
-                    <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>
-                    <button type={'submit'}>Search</button>
-                </form>
-            </div>
+            <FormComponent/>
             <div>
                 <iframe key={`${keyRang}`}
                         src={`https://www.youtube.com/embed/${keyRang}}`}

@@ -3,6 +3,7 @@ import {baseImg, getGenresCard, getMovies} from "@/servise/api.servise";
 import style from '@/moduleCSS/style.module.css'
 import Link from "next/link";
 import {IMovie} from "@/models/IPageMovie";
+import FormComponent from "@/component/FormComponent";
 interface IProps{
     searchParams:{
         page?:number
@@ -18,12 +19,7 @@ const MoviesPage =  async ({searchParams: {page, with_genres}}:IProps) => {
 
     return (
         <div className={style.div_MoviesPage}>
-            <div className={style.div_search}>
-                <form method={'GET'} action={'/search/movie'}>
-                    <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>
-                    <button type={'submit'}>Search</button>
-                </form>
-            </div>
+                <FormComponent/>
             <div className={style.div_inner_MoviesPage}>
                 {movies &&
                     movies.map(value => <div key={value.id} className={style.div_img_title}>
