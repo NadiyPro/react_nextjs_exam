@@ -12,7 +12,6 @@ interface IProps{
 }
 
 const MoviesPage =  async ({searchParams: {page, with_genres}}:IProps) => {
-// let searchQuery:ISearch[] = query? await getSearch(query) : '';
     let movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[]
     let paginationPrev:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page > 1 ? page - 1 : 1}` : `/discover/movie?page=${page > 1 ? page - 1 : 1}`
     let paginationNext:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page < 1 ? 1 : +page + 1}` : `/discover/movie?page=${page < 1 ? 1 : +page + 1}`

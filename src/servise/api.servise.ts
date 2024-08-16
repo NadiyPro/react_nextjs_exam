@@ -39,8 +39,8 @@ const getMovieInfo = async (movie_id:number):Promise<IMovieInfo> => {
     return movieInfo;
 }
 
-const getSearchPage= async (query:string):Promise<ISearchPage[]> => {
-    let search_get = await fetch(base + `/search/movie?query=${query}`, options)
+const getSearchPage= async (query:string,pageSearch:number):Promise<ISearchPage[]> => {
+    let search_get = await fetch(base + `/search/movie?query=${query}&page=${pageSearch}`, options)
         .then(response => response.json())
     return search_get.results;
 }
