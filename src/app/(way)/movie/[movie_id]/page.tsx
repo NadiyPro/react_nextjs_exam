@@ -7,13 +7,15 @@ import FormComponent from "@/component/FormComponent";
 import StarRating from "@/component/stars/Stars";
 
 const MovieInfo = async ({ params }: { params: { movie_id: string } }) => {
-    let movie_id:number = +params.movie_id;
-    let movie_info:IMovieInfo = await getMovieInfo(movie_id);
-    let genres_name = movie_info.genres.map(value => <Link key={value.id} href={{
-                             pathname: '/discover/movie', query: {with_genres: value.id, page: 1}}}>
-                             <h5>{value.name}</h5></Link>) as string;
-    let production_countries = movie_info.production_countries.map(value => value.name) as string;
-    let spoken_languages = movie_info.spoken_languages.map(value => value.name) as string;
+    const movie_id:number = +params.movie_id;
+    const movie_info:IMovieInfo = await getMovieInfo(movie_id);
+    const genres_name = movie_info.genres.map(value =>
+                                                    <Link key={value.id} href={{
+                                                        pathname: '/discover/movie',
+                                                        query: {with_genres: value.id, page: 1}}}>
+                                                        <h5>{value.name}</h5></Link>) as string;
+    const production_countries = movie_info.production_countries.map(value => value.name) as string;
+    const spoken_languages = movie_info.spoken_languages.map(value => value.name) as string;
 
     return (
         <div>
@@ -24,10 +26,7 @@ const MovieInfo = async ({ params }: { params: { movie_id: string } }) => {
                         <img className={style.img_title} src={baseImg + movie_info.poster_path} alt={'image'}/>
                     </div>
                     <div>
-                        <div>
-                            <h1>Rate this movie</h1>
-                            <StarRating rating={3}/>
-                        </div>
+                        <StarRating rating={3}/>
                     </div>
                 </div>
 

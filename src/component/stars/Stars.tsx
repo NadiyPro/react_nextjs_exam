@@ -44,6 +44,9 @@ const StarRating: React.FC<StarRatingProps> = ({ totalStars = 5, rating = 0, onR
                             cursor: disabled ? 'not-allowed' : 'pointer',
                             color: hoverRating !== null ? (starRating <= hoverRating ? 'gold' : 'gray') : (starRating <= currentRating ? 'gold' : 'gray'),
                             fontSize: '2rem',
+                            width: '15px',
+                            margin: '3px',
+                            height: '15px',
                         }}
                         onClick={() => handleClick(starRating)}
                         onMouseOver={() => handleMouseOver(starRating)}

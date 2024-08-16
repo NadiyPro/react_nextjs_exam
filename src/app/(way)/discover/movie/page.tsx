@@ -4,6 +4,7 @@ import style from '@/moduleCSS/style.module.css'
 import Link from "next/link";
 import {IMovie} from "@/models/IPageMovie";
 import FormComponent from "@/component/FormComponent";
+import StarRating from "@/component/stars/Stars";
 interface IProps{
     searchParams:{
         page?:number
@@ -13,9 +14,9 @@ interface IProps{
 }
 
 const MoviesPage =  async ({searchParams: {page, with_genres}}:IProps) => {
-    let movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[]
-    let paginationPrev:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page > 1 ? page - 1 : 1}` : `/discover/movie?page=${page > 1 ? page - 1 : 1}`
-    let paginationNext:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page < 1 ? 1 : +page + 1}` : `/discover/movie?page=${page < 1 ? 1 : +page + 1}`
+    const movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[]
+    const paginationPrev:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page > 1 ? page - 1 : 1}` : `/discover/movie?page=${page > 1 ? page - 1 : 1}`
+    const paginationNext:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page < 1 ? 1 : +page + 1}` : `/discover/movie?page=${page < 1 ? 1 : +page + 1}`
 
     return (
         <div className={style.div_MoviesPage}>
@@ -25,10 +26,13 @@ const MoviesPage =  async ({searchParams: {page, with_genres}}:IProps) => {
                     movies.map(value => <div key={value.id} className={style.div_img_title}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <Link href={`/movie/${value.id}`}><img className={style.img_title}
-                                                               src={baseImg + value.poster_path} alt={'image'}/></Link>
-                        <div className={style.p_MoviesPage}><p>{value.title}</p></div>
+                                                           src={baseImg + value.poster_path} alt={'image'}/></Link>
+                        <div className={style.p_MoviesPage}><p>{value.title}</p>
+                            <StarRating rating={3}/>
+                        </div>
                     </div>)
                 }
+                <StarRating rating={3}/>
             </div>
             <div>
                 <button className={style.button_pagination}>
