@@ -25,15 +25,19 @@ console.log(search)
             </div>
             <div className={style.div_inner_MoviesPage}>
                 {Array.isArray(search) ?
-                    search.map(value => <div key={value.id} className={style.div_img_title}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <Link href={`/movie/${value.id}`}><img className={style.img_title}
-                         src={baseImg + value.poster_path} alt={'image'}/></Link>
-                        <div className={style.p_MoviesPage}>
-                            <p>{value.title}</p>
-                        </div>
-                        <StarRating rating={3}/>
-                    </div>)
+                    search.map(value =>
+                        <div key={value.id}>
+                            <div key={value.id} className={style.div_img_title}>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <Link href={`/movie/${value.id}`}><img className={style.img_title}
+                                                                       src={baseImg + value.poster_path}
+                                                                       alt={'image'}/></Link>
+                                <p>{value.title}</p>
+                            </div>
+                            <div className={style.p_MoviesPage}>
+                                <StarRating rating={3}/>
+                            </div>
+                        </div>)
                     :
                     <div><p>There are no search results for your request</p></div>
                 }
@@ -45,7 +49,7 @@ console.log(search)
                 </button>
                 {page}
                 <button className={style.button_pagination}>
-                    <Link href={`/search/movie?query=${query}&page=${pageSearch < 1 ? 1 : +pageSearch + 1}`}>
+                <Link href={`/search/movie?query=${query}&page=${pageSearch < 1 ? 1 : +pageSearch + 1}`}>
                         Next {pageSearch < 1 ? 1 : +pageSearch + 1}</Link>
                 </button>
                 <button className={style.button_pagination}>

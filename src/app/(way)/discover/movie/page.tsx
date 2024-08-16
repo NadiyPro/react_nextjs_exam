@@ -23,16 +23,19 @@ const MoviesPage =  async ({searchParams: {page, with_genres}}:IProps) => {
                 <FormComponent/>
             <div className={style.div_inner_MoviesPage}>
                 {movies &&
-                    movies.map(value => <div key={value.id} className={style.div_img_title}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <Link href={`/movie/${value.id}`}><img className={style.img_title}
-                                                           src={baseImg + value.poster_path} alt={'image'}/></Link>
-                        <div className={style.p_MoviesPage}><p>{value.title}</p>
+                    movies.map(value => <div key={value.id}>
+                        <div key={value.id} className={style.div_img_title}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <Link href={`/movie/${value.id}`}><img className={style.img_title}
+                                                                   src={baseImg + value.poster_path}
+                                                                   alt={'image'}/></Link>
+                            <p>{value.title}</p>
+                        </div>
+                        <div className={style.p_MoviesPage}>
                             <StarRating rating={3}/>
                         </div>
                     </div>)
                 }
-                <StarRating rating={3}/>
             </div>
             <div>
                 <button className={style.button_pagination}>
@@ -43,7 +46,7 @@ const MoviesPage =  async ({searchParams: {page, with_genres}}:IProps) => {
                     <Link href={paginationNext}>Next {page < 1 ? 1 : +page + 1}</Link>
                 </button>
                 <button className={style.button_pagination}>
-                    <Link href={'/discover/movie?page=1'}>Home</Link>
+                <Link href={'/discover/movie?page=1'}>Home</Link>
                 </button>
 
             </div>
