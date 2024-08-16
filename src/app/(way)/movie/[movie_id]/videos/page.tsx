@@ -9,13 +9,15 @@ const VideosPage = async ({ params }: { params: { movie_id: string }}) => {
     let movie_video:Result[]= await getVideo(+movie_id);
     let name:string[]=  movie_video.map(value => value.name);
     let key:string[] =  movie_video.map(value => value.key);
+    let nameRang:string[]=  name.map(value => value);
+    let keyRang:string[] =  key.map(value => value);
 
     return (
         <div>
 
-            <iframe key={`${key}`}
-                    src={`https://www.youtube.com/embed/${key}}`}
-                    title = {`${name}`}
+            <iframe key={`${keyRang}`}
+                    src={`https://www.youtube.com/embed/${keyRang}}`}
+                    title = {`${nameRang}`}
                     width="560"
                     height="315"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

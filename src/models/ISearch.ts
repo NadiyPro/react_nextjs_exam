@@ -1,21 +1,9 @@
-export interface ISearch {
+export interface ISearch{
     page: number
-    results: Result[]
+    results: ISearchResult[]
 }
 
-export interface Result {
-    adult: boolean
-    backdrop_path: string
-    genre_ids: number[]
+export interface ISearchResult {
     id: number
-    original_language: string
-    original_title: string
-    overview: string
-    popularity: number
-    poster_path: string
-    release_date: string
-    title: string
-    video: boolean
-    vote_average: number
-    vote_count: number
+    name: string
 }
