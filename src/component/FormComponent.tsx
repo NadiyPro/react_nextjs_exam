@@ -1,5 +1,6 @@
 import React from 'react';
 import style from "@/moduleCSS/style.module.css";
+import Link from "next/link";
 
 const FormComponent = () => {
     return (
@@ -15,7 +16,7 @@ const FormComponent = () => {
                     <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width={30} height={30}/>
                 </div>
                 <div>
-
+                    <button><Link href={'/login'}>Login</Link></button>
                 </div>
             </div>
 
