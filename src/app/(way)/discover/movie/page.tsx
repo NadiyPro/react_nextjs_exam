@@ -1,5 +1,5 @@
 import React from 'react';
-import {baseImg, getGenresCard, getMovies, getSearchPage} from "@/servise/api.servise";
+import {baseImg, getGenresCard, getMovies} from "@/servise/api.servise";
 import style from '@/moduleCSS/style.module.css'
 import Link from "next/link";
 import {IMovie} from "@/models/IPageMovie";
@@ -15,8 +15,7 @@ interface IProps{
 
 const MoviesPage =  async ({searchParams: {page, with_genres, query}}:IProps) => {
 // let searchQuery:ISearch[] = query? await getSearch(query) : '';
-    let movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[] &&
-    query? await getSearchPage(query, +page) as IMovie[] : await getMovies(+page) as IMovie[]
+    let movies:IMovie[] = with_genres? await getGenresCard(with_genres, +page) as IMovie[] : await getMovies(+page) as IMovie[]
     let paginationPrev:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page > 1 ? page - 1 : 1}` : `/discover/movie?page=${page > 1 ? page - 1 : 1}`
     let paginationNext:string = with_genres? `/discover/movie?with_genres=${with_genres}&page=${page < 1 ? 1 : +page + 1}` : `/discover/movie?page=${page < 1 ? 1 : +page + 1}`
 

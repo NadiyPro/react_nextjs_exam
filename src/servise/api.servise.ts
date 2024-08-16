@@ -42,15 +42,15 @@ const getMovieInfo = async (movie_id:number):Promise<IMovieInfo> => {
 const getSearch= async (query:string):Promise<ISearch[]> => {
     let search_get = await fetch(base + `/search/keyword?query=${query}`, options)
         .then(response => response.json())
-    console.log(search_get.results)
+    // console.log(search_get.results)
     return search_get.results;
 }
-const getSearchPage= async (query:string,page:number):Promise<ISearch[]> => {
-    let search_get = await fetch(base + `/search/keyword?query=${query}&page=${page}`, options)
-        .then(response => response.json())
-    console.log(search_get.results)
-    return search_get.results;
-}
+// const getSearchPage= async (query:string,page:number):Promise<ISearch[]> => {
+//     let search_get = await fetch(base + `/search/keyword?query=${query}&page=${page}`, options)
+//         .then(response => response.json())
+//     console.log(search_get.results)
+//     return search_get.results;
+// }
 
 
 const getVideo = async (movie_id:number):Promise<Result[]> => {
@@ -67,6 +67,5 @@ export {
     getGenresCard,
     getMovieInfo,
     getVideo,
-    getSearch,
-    getSearchPage
+    getSearch
 }
