@@ -4,6 +4,7 @@ import {IMovieInfo} from "@/models/IMovieInfo";
 import style from "@/moduleCSS/style.module.css";
 import Link from "next/link";
 import FormComponent from "@/component/FormComponent";
+import StarRating from "@/component/stars/Stars";
 
 const MovieInfo = async ({ params }: { params: { movie_id: string } }) => {
     let movie_id:number = +params.movie_id;
@@ -23,7 +24,10 @@ const MovieInfo = async ({ params }: { params: { movie_id: string } }) => {
                         <img className={style.img_title} src={baseImg + movie_info.poster_path} alt={'image'}/>
                     </div>
                     <div>
-                        зірки
+                        <div>
+                            <h1>Rate this movie</h1>
+                            <StarRating rating={3}/>
+                        </div>
                     </div>
                 </div>
 
