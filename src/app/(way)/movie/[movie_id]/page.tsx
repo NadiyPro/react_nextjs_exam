@@ -28,13 +28,13 @@ const MovieInfo = async ({ params }: { params: { movie_id: string } }) => {
     const spoken_languages = movie_info.spoken_languages.map(value => value.name) as string;
 
     return (
-        <div>
+        <div className={style.div_MovieInfo}>
             <FormComponent/>
             <div className={style.div_inner_MovieInfo}>
                 <div className={style.div_MovieInfo_img}>
                     <div>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img className={style.img_title} src={baseImg + movie_info.poster_path} alt={'image'}/>
+                        <img className={style.img_MovieInfo} src={baseImg + movie_info.poster_path} alt={'image'}/>
                     </div>
                     <div className={style.div_StarRating}>
                         <StarRating rating={3}/>
@@ -43,26 +43,34 @@ const MovieInfo = async ({ params }: { params: { movie_id: string } }) => {
 
                 <div>
                     <div><h2>{movie_info.title}</h2></div>
-                    <div><h5>Genres: {genres_name}</h5></div>
-                    <div><h5>Release date: {movie_info.release_date}</h5></div>
-                    <div><h5>Production countries: {production_countries}</h5></div>
-                    <div><h5>Original language: {movie_info.original_language}</h5></div>
-                    <div><h5>Spoken languages: {spoken_languages}</h5></div>
-                    <div><h5>Vote count: {movie_info.vote_count} / Vote average: {movie_info.vote_average}</h5></div>
+                    <div><h6>Genres: {genres_name}</h6></div>
+                    <div><h6 className={style.div_h6_dop}>Release date: {movie_info.release_date}</h6></div>
+                    <div><h6>Production countries: {production_countries}</h6></div>
+                    <div><h6 className={style.div_h6_dop}>Original language: {movie_info.original_language}</h6></div>
+                    <div><h6>Spoken languages: {spoken_languages}</h6></div>
+                    <div><h6 className={style.div_h6_dop}>Vote count: {movie_info.vote_count} / Vote average: {movie_info.vote_average}</h6></div>
                 </div>
             </div>
 
-            <div>
-                <div>
-                    <h3>{movie_info.tagline}</h3>
-                    <p>{movie_info.overview}</p>
+            <div className={style.div_overview_button_MovieInfo}>
+                <div className={style.div_overview_button_MovieInfo}>
+                    <div>
+                        <h3>{movie_info.tagline}</h3>
+                    </div>
+                    <div>
+                        <p className={style.p_MovieInfo}>{movie_info.overview}</p>
+                    </div>
                 </div>
-                <div>
-                    <button className={style.button_pagination}>
-                        <Link href={`/movie/${movie_id}/videos`}>Video</Link>
+                <div className={style.div_button_MovieInfo}>
+                    <button className={style.button_pagination_MovieInfo}>
+                        <Link className={style.Link_MovieInfo} href={`/movie/${movie_id}/videos`}>
+                            Video trailer
+                        </Link>
                     </button>
                     <button className={style.button_pagination}>
-                        <Link href={'/discover/movie?page=1'}>Home</Link>
+                        <Link className={style.Link_MovieInfo} href={'/discover/movie?page=1'}>
+                            Home
+                        </Link>
                     </button>
                 </div>
             </div>

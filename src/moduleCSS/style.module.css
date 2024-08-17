@@ -215,27 +215,6 @@
 .h3_error_div_error_MovieSearchPage{
     color: darkred;/*тема*/
 }
-/*******MovieInfo*****/
-
-.div_inner_MovieInfo{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /*flex-direction: column;*/
-    flex-wrap: wrap;
-    border: 3px solid #1d541a;
-    background-color: rgba(245, 245, 245, 0.62); /*тема*/
-}
-.div_MovieInfo_img{
-    width: 150px;
-    height: 250px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    background-color: coral;
-}
-
 
 /*******genres***MoviesList*****/
 .div_genres{
@@ -275,5 +254,71 @@
     flex-direction: row;
     width: 150px;
     height: 100%;
+}
+
+/*******MovieInfo*****/
+.div_MovieInfo{
+    min-height: 100%;
+    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+}
+.div_inner_MovieInfo{
+    /*height: 100%;*/
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+}
+.div_MovieInfo_img{
+    width: 200px;
+    height: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.img_MovieInfo{
+    width: 200px;
+    height: 300px;
+}
+.div_h6_dop{
+    /*background-color: coral;*/
+    background-color: rgba(245, 245, 245, 0.75);
+}
+.div_h6_2{
+    background-color: cornflowerblue;
+}
+
+.div_overview_MovieInfo{
+    display: flex;
+}
+.div_overview_button_MovieInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.div_button_MovieInfo{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.button_pagination_MovieInfo{
+    width: 150px;
+    height: 30px;
+    margin: 20px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+.Link_MovieInfo{
+    color: black;/*тема*/
+}
+.Link_MovieInfo:hover{
+    color: darkcyan;/*тема*/
+}
+.p_MovieInfo{
+    margin: 10px 40px 10px 40px;
 }
 /********************/
