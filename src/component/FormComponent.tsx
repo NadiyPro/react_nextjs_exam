@@ -8,15 +8,15 @@ const FormComponent = () => {
             <div>
                 <form method={'GET'} action={'/search/movie'}>
                     <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>
-                    <button type={'submit'}>Search</button>
+                    <button className={style.button_pagination} type={'submit'}>Search</button>
                 </form>
             </div>
-            <div>
-                <div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width={30} height={30}/>
+            <div className={style.div_search_login}>
+                <div className={style.div_img_login}>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width={30} height={30} alt={'img'}/>
                 </div>
                 <div>
-                    <button><Link href={'/login'}>Login</Link></button>
+                    <button className={style.button_pagination}><Link href={'/login'}>Login</Link></button>
                 </div>
             </div>
 

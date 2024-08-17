@@ -20,13 +20,6 @@
     border: 3px solid #fafa00;
     min-height: 100vh;
 }
-.div_search{
-    width: 100%;
-    height: 10%;
-    border: 3px solid #0929cc;
-    margin: 10px;
-    background-color: rgba(245, 245, 245, 0.62); /*тема*/
-}
 /******MoviesPage*****/
 .div_MoviesPage{
     width: 100%;
@@ -46,6 +39,7 @@
     /*flex-direction: column;*/
     flex-wrap: wrap;
     background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);
 }
 .div_img_title{
     width: 180px;
@@ -54,8 +48,9 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(245, 245, 245, 0.75);
+    background-color: rgba(245, 245, 245, 0.75); /*тема*/
     margin: 3px;
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);
 }
 .img_title{
     width: 180px;
@@ -64,13 +59,24 @@
 .div_Lint_title{
     width: 150px;
     height: 20px;
-    background-color: darkcyan;
-
+}
+.div_button_MoviesPage{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(245, 245, 245, 0.75);/*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);
+    margin: 5px 0 5px 0;
 }
 .button_pagination{
     width: 60px;
     height: 30px;
     margin: 20px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);
 }
 .p_MoviesPage{
     display: flex;
@@ -80,8 +86,28 @@
     font-size: 15px;
     margin: 0;
 }
+/*****searchFormComponent*****/
+.div_search{
+    width: 100%;
+    height: 40px;
+    margin: 10px;
+    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.div_search_login{
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.div_img_login{
+    margin: 0 10px 0 1px;
+}
 
-/*******search***/
+/*******MovieInfo*****/
 
 .div_inner_MovieInfo{
     display: flex;
