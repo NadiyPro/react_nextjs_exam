@@ -8,7 +8,6 @@ const MoviesList = async () => {
     const movieList:IMovieList[] = await getGenres();
     return (
         <div className={style.div_MoviesList}>
-            {/*<div>*/}
                 <div className={style.h3_genres}>
                     <h2>Genres:</h2>
                 </div>
@@ -22,7 +21,6 @@ const MoviesList = async () => {
                         </Link>
                     </div>
                 )}
-            {/*</div>*/}
         </div>
 
 
