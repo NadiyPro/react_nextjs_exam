@@ -201,7 +201,20 @@
 .p_MovieSearchPage:hover{
     color: darkcyan;/*тема*/
 }
-
+.img_MovieSearchPage{
+    width: 300px;
+    height: 300px;
+}
+.div_error_MovieSearchPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.h3_error_div_error_MovieSearchPage{
+    color: darkred;/*тема*/
+}
 /*******MovieInfo*****/
 
 .div_inner_MovieInfo{
