@@ -39,7 +39,7 @@
     /*flex-direction: column;*/
     flex-wrap: wrap;
     background-color: rgba(245, 245, 245, 0.62); /*тема*/
-    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .div_img_title{
     width: 180px;
@@ -50,7 +50,7 @@
     flex-direction: column;
     background-color: rgba(245, 245, 245, 0.75); /*тема*/
     margin: 3px;
-    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .img_title{
     width: 180px;
@@ -67,7 +67,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(245, 245, 245, 0.75);/*тема*/
-    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
     margin: 5px 0 5px 0;
 }
 .button_pagination{
@@ -76,7 +76,7 @@
     margin: 20px;
     border-radius: 4px;
     border: none;
-    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .p_MoviesPage{
     display: flex;
@@ -85,10 +85,10 @@
     align-items: center;
     font-size: 15px;
     margin: 0;
-    color: black;
+    color: black;/*тема*/
 }
 .p_MoviesPage:hover{
-    color: darkcyan;
+    color: darkcyan;/*тема*/
 }
 /*****searchFormComponent*****/
 .div_search{
@@ -96,7 +96,7 @@
     height: 40px;
     margin: 10px;
     background-color: rgba(245, 245, 245, 0.62); /*тема*/
-    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
     display: flex;
     justify-content: space-between;
     align-items: center;
