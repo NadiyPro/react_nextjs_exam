@@ -23,18 +23,19 @@ const MoviesPage =  async ({searchParams: {page, with_genres}}:IProps) => {
                 <FormComponent/>
             <div className={style.div_inner_MoviesPage}>
                 {movies &&
-                    movies.map(value => <div key={value.id}>
+                    movies.map(value =>
                         <div key={value.id} className={style.div_img_title}>
+                            <div key={value.id}>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <Link href={`/movie/${value.id}`}><img className={style.img_title}
+                                <Link href={`/movie/${value.id}`}><img className={style.img_title}
                                                                    src={baseImg + value.poster_path}
                                                                    alt={'image'}/></Link>
-                            <p>{value.title}</p>
-                        </div>
-                        <div className={style.p_MoviesPage}>
-                            <StarRating rating={3}/>
-                        </div>
-                    </div>)
+                                <div><Link href={`/movie/${value.id}`}><p className={style.p_MoviesPage}>{value.title}</p></Link></div>
+                            </div>
+                            <div>
+                                <StarRating rating={3}/>
+                            </div>
+                        </div>)
                 }
             </div>
             <div>

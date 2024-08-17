@@ -4,6 +4,7 @@ import {baseImg, getSearchPage} from "@/servise/api.servise";
 import style from "@/moduleCSS/style.module.css";
 import Link from "next/link";
 import StarRating from "@/component/stars/Stars";
+import FormComponent from "@/component/FormComponent";
 interface ISearchProps{
     searchParams:{
         query?:string
@@ -16,25 +17,26 @@ const MovieSearchPage = async ({searchParams: {query,page}}:ISearchProps) => {
 console.log(search)
 
     return (
-        <div>
-            <div className={style.div_search}>
+        <div >
+            <FormComponent/>
+            <div >
                 <form method={'GET'} action={'/search/movie'}>
                     <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>
                     <button type={'submit'}>Search</button>
                 </form>
             </div>
-            <div className={style.div_inner_MoviesPage}>
+            <div >
                 {Array.isArray(search) ?
                     search.map(value =>
                         <div key={value.id}>
-                            <div key={value.id} className={style.div_img_title}>
+                            <div key={value.id} >
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <Link href={`/movie/${value.id}`}><img className={style.img_title}
                                                                        src={baseImg + value.poster_path}
                                                                        alt={'image'}/></Link>
-                                <p>{value.title}</p>
+                                <Link href={`/movie/${value.id}`}><p className={style.p_MoviesPage}>{value.title}</p></Link>
                             </div>
-                            <div className={style.p_MoviesPage}>
+                            <div>
                                 <StarRating rating={3}/>
                             </div>
                         </div>)

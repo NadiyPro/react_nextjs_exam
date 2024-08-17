@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import style from "@/moduleCSS/style.module.css";
 
 interface StarRatingProps {
     totalStars?: number;
@@ -34,7 +35,7 @@ const StarRating: React.FC<StarRatingProps> = ({ totalStars = 5, rating = 0, onR
     };
 
     return (
-        <div style={{ display: 'flex' }}>
+        <div className={style.div_StarRating}>
             {[...Array(totalStars)].map((_, i) => {
                 const starRating = i + 1;
                 return (
@@ -43,17 +44,16 @@ const StarRating: React.FC<StarRatingProps> = ({ totalStars = 5, rating = 0, onR
                         style={{
                             cursor: disabled ? 'not-allowed' : 'pointer',
                             color: hoverRating !== null ? (starRating <= hoverRating ? 'gold' : 'gray') : (starRating <= currentRating ? 'gold' : 'gray'),
-                            fontSize: '2rem',
-                            width: '15px',
+                            fontSize: '20px',
                             margin: '3px',
-                            height: '15px',
+                            padding: '0'
                         }}
                         onClick={() => handleClick(starRating)}
                         onMouseOver={() => handleMouseOver(starRating)}
                         onMouseOut={handleMouseOut}
                     >
-            ★
-          </span>
+                        ★
+                    </span>
                 );
             })}
         </div>

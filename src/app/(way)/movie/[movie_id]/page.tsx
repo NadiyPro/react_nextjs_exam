@@ -30,13 +30,13 @@ const MovieInfo = async ({ params }: { params: { movie_id: string } }) => {
     return (
         <div>
             <FormComponent/>
-            <div>
-                <div>
+            <div className={style.div_inner_MovieInfo}>
+                <div className={style.div_MovieInfo_img}>
                     <div>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img className={style.img_title} src={baseImg + movie_info.poster_path} alt={'image'}/>
                     </div>
-                    <div>
+                    <div className={style.div_StarRating}>
                         <StarRating rating={3}/>
                     </div>
                 </div>
