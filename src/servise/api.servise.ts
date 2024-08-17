@@ -51,7 +51,6 @@ const getVideo = async (movie_id:number):Promise<Result[]> => {
     return movieVideo.results;
 }
 
-
 export {
     getMovies,
     baseImg,

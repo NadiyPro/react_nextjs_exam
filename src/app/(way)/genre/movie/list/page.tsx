@@ -8,7 +8,7 @@ const MoviesList = async () => {
     const movieList:IMovieList[] = await getGenres();
     return (
         <div className={style.div_MoviesList}>
-            <div>
+            <div> <h5>Genres</h5>
                 {movieList.map(value =>
                     <div key={value.id} className={style.p_MoviesList}>
                         <Link href={{
