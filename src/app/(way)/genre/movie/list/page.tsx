@@ -17,7 +17,7 @@ const MoviesList = async () => {
                             pathname:'/discover/movie',
                             query:{with_genres:value.id,page:1}
                         }} className={style.Link_genres}>
-                            <h6 className={style.h4_genres}>{value.name}</h6>
+                            <h4 className={style.h4_genres}>{value.name}</h4>
                         </Link>
                     </div>
                 )}
