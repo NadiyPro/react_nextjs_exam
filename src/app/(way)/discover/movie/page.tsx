@@ -30,7 +30,11 @@ const MoviesPage =  async ({searchParams: {page, with_genres}}:IProps) => {
                                 <Link href={`/movie/${value.id}`}><img className={style.img_title}
                                                                    src={baseImg + value.poster_path}
                                                                    alt={'image'}/></Link>
-                                <div><Link href={`/movie/${value.id}`}><p className={style.p_MoviesPage}>{value.title}</p></Link></div>
+                                <div>
+                                    <Link href={`/movie/${value.id}`} className={style.Link_MoviesPage}>
+                                    <p className={style.p_MoviesPage}>{value.title}</p>
+                                    </Link>
+                                </div>
                             </div>
                             <div>
                                 <StarRating rating={3}/>

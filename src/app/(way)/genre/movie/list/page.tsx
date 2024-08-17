@@ -8,16 +8,20 @@ const MoviesList = async () => {
     const movieList:IMovieList[] = await getGenres();
     return (
         <div className={style.div_MoviesList}>
-            <div> <h5>Genres</h5>
+            {/*<div>*/}
+                <div className={style.h3_genres}>
+                    <h2>Genres:</h2>
+                </div>
                 {movieList.map(value =>
                     <div key={value.id} className={style.p_MoviesList}>
                         <Link href={{
                             pathname:'/discover/movie',
                             query:{with_genres:value.id,page:1}
-                        }}>{value.name}</Link>
+                        }} className={style.Link_genres}>
+                            <h4>{value.name}</h4></Link>
                     </div>
                 )}
-            </div>
+            {/*</div>*/}
         </div>
 
 
