@@ -85,6 +85,10 @@
     align-items: center;
     font-size: 15px;
     margin: 0;
+    color: black;
+}
+.p_MoviesPage:hover{
+    color: darkcyan;
 }
 /*****searchFormComponent*****/
 .div_search{
@@ -106,7 +110,10 @@
 .div_img_login{
     margin: 0 10px 0 1px;
 }
-
+.input_FormComponent{
+    width: 200px;
+    margin-right: 5px;
+}
 /*******MovieInfo*****/
 
 .div_inner_MovieInfo{

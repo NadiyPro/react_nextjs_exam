@@ -7,7 +7,7 @@ const FormComponent = () => {
         <div className={style.div_search}>
             <div>
                 <form method={'GET'} action={'/search/movie'}>
-                    <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'}/></label>
+                    <label><input type={"text"} name={'query'} placeholder={'Enter the name of the movie'} className={style.input_FormComponent}/></label>
                     <button className={style.button_pagination} type={'submit'}>Search</button>
                 </form>
             </div>
@@ -16,7 +16,7 @@ const FormComponent = () => {
                     <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width={30} height={30} alt={'img'}/>
                 </div>
                 <div>
-                    <button className={style.button_pagination}><Link href={'/login'}>Login</Link></button>
+                    <button className={style.button_pagination}><Link href={'/login'} className={style.p_MoviesPage}>Login</Link></button>
                 </div>
             </div>
 
