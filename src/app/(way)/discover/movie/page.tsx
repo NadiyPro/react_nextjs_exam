@@ -26,13 +26,13 @@ const MoviesPage =  async ({searchParams: {page, with_genres}}:IProps) => {
                     movies.map(value =>
                         <div key={value.id} className={style.div_img_title}>
                             <div key={value.id}>
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <Link href={`/movie/${value.id}`}><img className={style.img_title}
-                                                                   src={baseImg + value.poster_path}
-                                                                   alt={'image'}/></Link>
+                                                                       src={baseImg + value.poster_path}
+                                                                       alt={'image'}/></Link>
                                 <div>
                                     <Link href={`/movie/${value.id}`} className={style.Link_MoviesPage}>
-                                    <p className={style.p_MoviesPage}>{value.title}</p>
+                                        <p className={style.p_MoviesPage}>{value.title}</p>
                                     </Link>
                                 </div>
                             </div>
