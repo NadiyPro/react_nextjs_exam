@@ -11,15 +11,15 @@ const VideosPage = async ({ params }: { params: { movie_id: string }}) => {
     const movie_video:Result[]= await getVideo(+movie_id);
     const video:Result | null = movie_video.length > 0 ? movie_video[0] : null;
     return (
-        <div>
+        <div className={style.div_VideosPage}>
             <FormComponent/>
-            <div>
+            <div className={style.div_inner_VideosPage}>
                 {video ? (
                     <div>
-                        <h3>{video.name}</h3>
+                        <h2>{video.name}</h2>
                         <iframe
-                            width="560"
-                            height="315"
+                            width="840"
+                            height="472"
                             src={`https://www.youtube.com/embed/${video.key}`}
                             title={video.name}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -27,17 +27,27 @@ const VideosPage = async ({ params }: { params: { movie_id: string }}) => {
                         ></iframe>
                     </div>
                 ) : (
-                    <p>No videos available</p>
-                )}
+                    <div className={style.div_error_MovieSearchPage}>
+                        <div>
+                            <img className={style.img_MovieSearchPage}
+                                 src={'https://stickeryouwant.com.ua/src/apps/admin/files/product-photo-1604871456343.png'}
+                                 alt={'img'}/>
+                        </div>
+                        <div>
+                            <h3 className={style.h3_error_div_error_MovieSearchPage}>No videos available</h3>
+
+                        </div>
+                    </div>
+                    )}
                 <div>
                     <StarRating rating={3}/>
                 </div>
-                <div>
+                <div className={style.div_button_VideosPage}>
                     <button className={style.button_pagination}>
-                        <Link href={`/movie/${movie_id}`}>Back</Link>
+                        <Link className={style.Link_VideosPage} href={`/movie/${movie_id}` }>Back</Link>
                     </button>
                     <button className={style.button_pagination}>
-                        <Link href={'/discover/movie?page=1'}>Home</Link>
+                        <Link className={style.Link_VideosPage} href={'/discover/movie?page=1'}>Home</Link>
                     </button>
                 </div>
             </div>
