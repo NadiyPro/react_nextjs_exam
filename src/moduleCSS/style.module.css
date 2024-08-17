@@ -147,7 +147,6 @@
 
 /*******genres***MoviesList*****/
 .div_genres{
-    width: 95%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -157,6 +156,9 @@
 .div_MoviesList{
     display: flex;
     flex-direction: column;
+}
+.h4_genres{
+    margin: 5px;
 }
 .h3_genres{
     color: black;/*тема*/
