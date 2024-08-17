@@ -283,13 +283,8 @@
     height: 300px;
 }
 .div_h6_dop{
-    /*background-color: coral;*/
     background-color: rgba(245, 245, 245, 0.75);
 }
-.div_h6_2{
-    background-color: cornflowerblue;
-}
-
 .div_overview_MovieInfo{
     display: flex;
 }
