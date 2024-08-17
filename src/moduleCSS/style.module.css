@@ -323,11 +323,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 0;
 }
 .div_inner_VideosPage{
     min-width: 70vw;
-    min-height: 100vh;
-    /*height: 100%;*/
+    min-height: 95vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
