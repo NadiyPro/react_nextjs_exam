@@ -9,24 +9,26 @@ import StarRating from "@/component/stars/Stars";
 const VideosPage = async ({ params }: { params: { movie_id: string }}) => {
     const movie_id:number = +params.movie_id;
     const movie_video:Result[]= await getVideo(+movie_id);
-    const name:string[]=  movie_video.map(value => value.name);
-    const key:string[] =  movie_video.map(value => value.key);
-    const nameRang:string[]=  name.map(value => value);
-    const keyRang:string[] =  key.map(value => value);
-
+    const video:Result | null = movie_video.length > 0 ? movie_video[0] : null;
     return (
         <div>
             <FormComponent/>
             <div>
-                <iframe key={`${keyRang}`}
-                        src={`https://www.youtube.com/embed/${keyRang}}`}
-                        title={`${nameRang}`}
-                        width="560"
-                        height="315"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                />
+                {video ? (
+                    <div>
+                        <h3>{video.name}</h3>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src={`https://www.youtube.com/embed/${video.key}`}
+                            title={video.name}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                ) : (
+                    <p>No videos available</p>
+                )}
                 <div>
                     <StarRating rating={3}/>
                 </div>
