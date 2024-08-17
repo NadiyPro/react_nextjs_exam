@@ -17,15 +17,12 @@
 .div_children{
     width: 70%;
     display: flex;
-    border: 3px solid #fafa00;
     min-height: 100vh;
+    /*margin-right: 30px;*/
+    margin-left: 20px;
 }
 .h1_layout{
     color: white;
-}
-
-.div_h1_genres{
-    border: 3px solid #fafa00;
 }
 /******MoviesPage*****/
 .div_MoviesPage{
@@ -34,7 +31,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 3px solid #741781;
 }
 .div_inner_MoviesPage{
     height: 100%;
@@ -318,7 +314,7 @@
 }
 /*********VideosPage***********/
 .div_VideosPage{
-    width: 91vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -21,7 +21,7 @@ export default function RootLayout({
       <html lang="en">
       <body className={style.div_body}>
       <div className={style.div_gallery}>
-          <header className={style.div_h1_genres}>
+          <header>
               <div>
                   <h1 className={style.h1_layout}>MOVIE</h1>
               </div>
