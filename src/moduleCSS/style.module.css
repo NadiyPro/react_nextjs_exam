@@ -153,7 +153,7 @@
     align-items: center;
     flex-direction: column;
     background-color: rgba(245, 245, 245, 0.75); /*тема*/
-    margin: 3px;
+    margin: 5px;
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .img_title_MovieSearchPage{

@@ -21,14 +21,14 @@ export default function RootLayout({
       <html lang="en">
       <body className={style.div_body}>
       <div className={style.div_gallery}>
-          <div className={style.div_h1_genres}>
+          <header className={style.div_h1_genres}>
               <div>
                   <h1 className={style.h1_layout}>MOVIE</h1>
               </div>
               <nav className={style.div_genres}>
                   <MoviesList/>
               </nav>
-          </div>
+          </header>
           <div className={style.div_children}>
               {children}
           </div>
