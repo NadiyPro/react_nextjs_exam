@@ -35,7 +35,6 @@ export default function RootLayout({
               <div>
                   <h1 className={style.h1_layout}>MOVIE</h1>
                   <ThemeToggle />
-                  {/*<button id='themToggle'>color</button>*/}
               </div>
               <nav className={style.div_genres}>
                   <MoviesList/>
