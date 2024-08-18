@@ -53,16 +53,16 @@ console.log(search)
             </div>
             <div className='div_button_MovieSearchPage'>
                 <button  className='button_pagination_MovieSearchPage'>
-                    <Link href={`/search/movie?query=${query}&page=${pageSearch > 1 ? pageSearch - 1 : 1}`} className='style.p_MovieSearchPage'>
+                    <Link href={`/search/movie?query=${query}&page=${pageSearch > 1 ? pageSearch - 1 : 1}`} className='Link_MovieSearchPage'>
                         Prev {pageSearch > 1 ? pageSearch - 1 : 1}</Link>
                 </button>
                 <h2>{page}</h2>
                 <button className='button_pagination_MovieSearchPage'>
-                <Link href={`/search/movie?query=${query}&page=${pageSearch < 1 ? 1 : +pageSearch + 1}`} className='style.p_MovieSearchPage'>
+                <Link href={`/search/movie?query=${query}&page=${pageSearch < 1 ? 1 : +pageSearch + 1}`} className='Link_MovieSearchPage'>
                         Next {pageSearch < 1 ? 1 : +pageSearch + 1}</Link>
                 </button>
                 <button className='button_pagination_MovieSearchPage' >
-                    <Link href={'/discover/movie?page=1'} className='style.p_MovieSearchPage'>
+                    <Link href={'/discover/movie?page=1'} className='Link_MovieSearchPage'>
                         Home
                     </Link>
                 </button>

@@ -41,7 +41,7 @@ const MovieInfo = async ({ params }: { params: { movie_id: string } }) => {
                     </div>
                 </div>
 
-                <div>
+                <div className='div_h6_info'>
                     <div><h2>{movie_info.title}</h2></div>
                     <div><h6>Genres: {genres_name}</h6></div>
                     <div><h6 className='div_h6_dop'>Release date: {movie_info.release_date}</h6></div>

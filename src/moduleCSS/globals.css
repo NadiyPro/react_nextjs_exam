@@ -49,7 +49,7 @@
     margin-left: 20px;
 }
 .h1_layout{
-    color: var(--color);
+    color: white;
 }
 /******MoviesPage*****/
 .div_MoviesPage{
@@ -98,6 +98,7 @@
     background-color: var(--background-color);/*тема*/
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
     margin: 5px 0 5px 0;
+    color: var(--color);
 }
 .button_pagination{
     width: 60px;
@@ -106,6 +107,7 @@
     border-radius: 4px;
     border: none;
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+    color: var(--color);
 }
 .Link_MoviesPage{
     color: var(--color);/*тема*/
@@ -197,6 +199,7 @@
     background-color: var(--background-color);/*тема*/
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
     margin: 5px 0 5px 0;
+    color: var(--color);
 }
 .button_pagination_MovieSearchPage{
     width: 60px;
@@ -205,6 +208,7 @@
     border-radius: 4px;
     border: none;
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+    color: var(--color);
 }
 .Link_MovieSearchPage{
     color: var(--color);/*тема*/
@@ -312,11 +316,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: var(--color);
 }
 .div_button_MovieInfo{
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    color: var(--color);
 }
 .button_pagination_MovieInfo{
     width: 150px;
@@ -325,6 +331,7 @@
     border-radius: 4px;
     border: none;
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+    color: var(--color);
 }
 .Link_MovieInfo{
     color: var(--color);/*тема*/
@@ -334,6 +341,9 @@
 }
 .p_MovieInfo{
     margin: 10px 40px 10px 40px;
+}
+.div_h6_info{
+    color: var(--color);
 }
 /*********VideosPage***********/
 .div_VideosPage{
@@ -360,6 +370,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    color: var(--color);
 }
 .Link_VideosPage{
     color: var(--color);/*тема*/
@@ -393,4 +404,12 @@
 .img_LoginPage{
     height: 150px;
     width: 320px;
+}
+/******them*****/
+.button_them{
+    margin: 20px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+    color: var(--color);
 }
