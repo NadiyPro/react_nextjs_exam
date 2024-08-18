@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className = 'div_body'>
       <div className='div_gallery'>
           <header>
-              <div>
+              <div className='div_them_layout'>
                   <h1 className='h1_layout'>MOVIE</h1>
                   <ThemeToggle />
               </div>

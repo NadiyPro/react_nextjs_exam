@@ -33,6 +33,12 @@
     background-size: cover;
     background-image: var(--background_image);
 }
+.div_them_layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 .div_gallery{
     /*width: 10vw;*/
