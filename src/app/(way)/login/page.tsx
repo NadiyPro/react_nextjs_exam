@@ -1,18 +1,18 @@
 import React from 'react';
 import Link from "next/link";
 import FormComponent from "@/component/FormComponent";
-import style from "@/moduleCSS/style.module.css";
+import '@/moduleCSS/globals.css';
 
 const LoginPage = () => {
     return (
-        <div className={style.div_LoginPage_LoginPage}>
+        <div className='div_LoginPage_LoginPage'>
             <FormComponent/>
-            <div className={style.div_LoginPage}>
+            <div className='div_LoginPage'>
                 <div>
-                    <img className={style.img_LoginPage} src={'https://www.pngall.com/wp-content/uploads/14/Welcome-Background-PNG.png'} alt={'img'}/>
+                    <img className='img_LoginPage' src={'https://www.pngall.com/wp-content/uploads/14/Welcome-Background-PNG.png'} alt={'img'}/>
                 </div>
                 <div>
-                    <form className={style.form_LoginPage} method={'GET'} action={'/search/movie'}>
+                    <form className='form_LoginPage' method={'GET'} action={'/search/movie'}>
                         <label form="name">Enter your login</label>
                         <input type={"text"} name={'name'} placeholder={'Nadia Prosianyk'}
                                required={true}/>
@@ -21,13 +21,13 @@ const LoginPage = () => {
                         <input type={"password"} name={'password'} placeholder={'**********'}
                                required={true}/>
                         <div>
-                            <button className={style.button_pagination}>
-                                <Link href={'/discover/movie?page=1'} className={style.p_MoviesPage}>
+                            <button className='button_pagination'>
+                                <Link href={'/discover/movie?page=1'} className='p_MoviesPage'>
                                     Login
                                 </Link>
                             </button>
-                            <button className={style.button_pagination}>
-                                <Link href={'/discover/movie?page=1'} className={style.p_MoviesPage}>
+                            <button className='button_pagination'>
+                                <Link href={'/discover/movie?page=1'} className='p_MoviesPage'>
                                     Home
                                 </Link>
                             </button>

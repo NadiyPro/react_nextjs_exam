@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import style from "@/moduleCSS/style.module.css";
+import '@/moduleCSS/globals.css'
 
 interface StarRatingProps {
     totalStars?: number;
@@ -35,7 +35,7 @@ const StarRating: React.FC<StarRatingProps> = ({ totalStars = 5, rating = 0, onR
     };
 
     return (
-        <div className={style.div_StarRating}>
+        <div className='div_StarRating'>
             {[...Array(totalStars)].map((_, i) => {
                 const starRating = i + 1;
                 return (

@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import '@/moduleCSS/globals.css'
 
 const ThemeToggle: React.FC = () => {
     const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);

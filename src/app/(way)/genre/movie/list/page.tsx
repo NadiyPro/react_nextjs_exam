@@ -1,23 +1,23 @@
 import {getGenres} from "@/servise/api.servise";
 import {IMovieList} from "@/models/IMovieList";
 import React from "react";
-import style from "@/moduleCSS/style.module.css";
+import '@/moduleCSS/globals.css';
 import Link from "next/link";
 
 const MoviesList = async () => {
     const movieList:IMovieList[] = await getGenres();
     return (
-        <div className={style.div_MoviesList}>
-                <div className={style.h3_genres}>
+        <div className='div_MoviesList'>
+                <div className='h3_genres'>
                     <h2>Genres:</h2>
                 </div>
                 {movieList.map(value =>
-                    <div key={value.id} className={style.p_MoviesList}>
+                    <div key={value.id} className='p_MoviesList'>
                         <Link href={{
                             pathname:'/discover/movie',
                             query:{with_genres:value.id,page:1}
-                        }} className={style.Link_genres}>
-                            <h4 className={style.h4_genres}>{value.name}</h4>
+                        }} className='Link_genres'>
+                            <h4 className='h4_genres'>{value.name}</h4>
                         </Link>
                     </div>
                 )}

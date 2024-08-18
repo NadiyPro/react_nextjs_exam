@@ -20,3 +20,375 @@
     background-size: cover;
     background-image: var(--background_image);
 }
+
+
+/***/
+
+/*****layout*****/
+.div_gallery{
+    /*width: 10vw;*/
+    /*height: 60vh;*/
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.div_children{
+    width: 60vw;
+    display: flex;
+    min-height: 100vh;
+    /*margin-right: 30px;*/
+    margin-left: 20px;
+}
+.h1_layout{
+    color: white;
+}
+/******MoviesPage*****/
+.div_MoviesPage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.div_inner_MoviesPage{
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    /*align-items: center;*/
+    align-content: flex-start;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+.div_img_title{
+    width: 180px;
+    height: 320px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(245, 245, 245, 0.75); /*тема*/
+    margin: 3px;
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+.img_title{
+    width: 180px;
+    height: 240px;
+}
+.div_Lint_title{
+    width: 150px;
+    height: 20px;
+}
+.div_button_MoviesPage{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(245, 245, 245, 0.75);/*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+    margin: 5px 0 5px 0;
+}
+.button_pagination{
+    width: 60px;
+    height: 30px;
+    margin: 20px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+.Link_MoviesPage{
+    color: black;/*тема*/
+}
+.Link_MoviesPage:hover{
+    color: darkcyan;/*тема*/
+}
+.p_MoviesPage{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin: 0;
+    color: black;/*тема*/
+}
+.p_MoviesPage:hover{
+    color: darkcyan;/*тема*/
+}
+/*****search***FormComponent*****/
+.div_search{
+    width: 98%;
+    height: 40px;
+    margin: 10px;
+    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.div_search_login{
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.div_img_login{
+    margin: 0 10px 0 1px;
+}
+.input_FormComponent{
+    width: 200px;
+    margin-left: 10px;
+}
+
+/*****search***MovieSearchPage*****/
+.div_MovieSearchPage{
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.div_inner_MovieSearchPage{
+    min-width: 60vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+.div_img_title_MovieSearchPage{
+    width: 180px;
+    height: 320px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(245, 245, 245, 0.75); /*тема*/
+    margin: 5px;
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+.img_title_MovieSearchPage{
+    width: 180px;
+    height: 240px;
+}
+.div_Lint_title_MovieSearchPage{
+    width: 150px;
+    height: 20px;
+    background-color: darkcyan;
+}
+.div_button_MovieSearchPage{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(245, 245, 245, 0.75);/*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+    margin: 5px 0 5px 0;
+}
+.button_pagination_MovieSearchPage{
+    width: 60px;
+    height: 30px;
+    margin: 20px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+.Link_MovieSearchPage{
+    color: black;/*тема*/
+}
+.Link_MovieSearchPage:hover{
+    color: darkcyan;/*тема*/
+}
+.p_MovieSearchPage{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin: 0;
+    color: black;/*тема*/
+}
+.p_MovieSearchPage:hover{
+    color: darkcyan;/*тема*/
+}
+.img_MovieSearchPage{
+    width: 300px;
+    height: 300px;
+}
+.div_error_MovieSearchPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.h3_error_div_error_MovieSearchPage{
+    color: darkred;/*тема*/
+}
+
+/*******genres***MoviesList*****/
+.div_genres{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+.div_MoviesList{
+    display: flex;
+    flex-direction: column;
+}
+.h4_genres{
+    margin: 5px;
+}
+.h3_genres{
+    color: black;/*тема*/
+    text-align: center;
+}
+.Link_genres{
+    color: black;/*тема*/
+}
+.Link_genres:hover{
+    color: darkcyan;/*тема*/
+}
+.p_MoviesList{
+    font-size: 16px;
+    font-weight: bold;
+    /*margin: 20px;*/
+}
+/*********stars********/
+.div_StarRating{
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-direction: row;
+    width: 150px;
+    height: 100%;
+}
+
+/*******MovieInfo*****/
+.div_MovieInfo{
+    min-height: 100%;
+    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+}
+.div_inner_MovieInfo{
+    /*height: 100%;*/
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+}
+.div_MovieInfo_img{
+    width: 200px;
+    height: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.img_MovieInfo{
+    width: 200px;
+    height: 300px;
+}
+.div_h6_dop{
+    background-color: rgba(245, 245, 245, 0.75);
+}
+.div_overview_MovieInfo{
+    display: flex;
+}
+.div_overview_button_MovieInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.div_button_MovieInfo{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.button_pagination_MovieInfo{
+    width: 150px;
+    height: 30px;
+    margin: 20px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+.Link_MovieInfo{
+    color: black;/*тема*/
+}
+.Link_MovieInfo:hover{
+    color: darkcyan;/*тема*/
+}
+.p_MovieInfo{
+    margin: 10px 40px 10px 40px;
+}
+/*********VideosPage***********/
+.div_VideosPage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+.div_inner_VideosPage{
+    min-width: 70vw;
+    min-height: 95vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+.div_button_VideosPage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.Link_VideosPage{
+    color: black;/*тема*/
+}
+.Link_VideosPage:hover{
+    color: darkcyan;/*тема*/
+}
+/*********LoginPage***********/
+.div_LoginPage_LoginPage{
+    width: 80vw;
+    height: 90vh;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-content: center;*/
+}
+.div_LoginPage{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
+}
+
+.form_LoginPage{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+
+}
+
+.img_LoginPage{
+    height: 150px;
+    width: 320px;
+}

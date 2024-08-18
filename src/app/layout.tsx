@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import React from "react";
-import style from "@/moduleCSS/style.module.css";
 import MoviesList from "@/app/(way)/genre/movie/list/page";
 import Head from "next/head";
 import '../moduleCSS/globals.css';
-import ThemeToggle from "@/component/ThemeComponent";
+import ThemeToggle from "@/component/ThemeToggle";
 
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -29,18 +28,18 @@ export default function RootLayout({
           <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
           <link rel="manifest" href="/favicon/site.webmanifest"/>
       </Head>
-      <body className='div_body'>
-      <div className={style.div_gallery}>
+      <body className = 'div_body'>
+      <div className='div_gallery'>
           <header>
               <div>
-                  <h1 className={style.h1_layout}>MOVIE</h1>
+                  <h1 className='h1_layout'>MOVIE</h1>
                   <ThemeToggle />
               </div>
-              <nav className={style.div_genres}>
+              <nav className='div_genres'>
                   <MoviesList/>
               </nav>
           </header>
-          <div className={style.div_children}>
+          <div className='div_children'>
               {children}
           </div>
       </div>
