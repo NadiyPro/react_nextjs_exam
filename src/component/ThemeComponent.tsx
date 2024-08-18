@@ -48,14 +48,61 @@
 
 // // pages/index.tsx
 // import ThemeToggle from '../components/ThemeToggle';
+
+
+
+// const ThemeToggle = () => {
+//     let root = document.querySelector(':root');
+//     let button = document.querySelector('#themToggle');
 //
-// const Home = () => {
+//     button.addEventListener('click', () => {
+//       event.preventDefault();
+//       root.classList.toggle('dark');
+//       if(themToggle.textContent === 'color'){
+//           themToggle.textContent === 'dark';}
+//       else{
+//           themToggle.textContent === 'color'
+//       }
+//
+//     })
 //     return (
 //         <div>
-//             <ThemeToggle />
-//             <h1>Welcome to the Theme Toggle Page!</h1>
+//
 //         </div>
 //     );
 // };
 //
-// export default Home;
+// export default ThemeToggle;
+//
+
+'use client';
+import React, { useEffect, useState } from 'react';
+
+const ThemeToggle: React.FC = () => {
+    const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            setIsDarkTheme(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        document.body.classList.toggle('dark-theme', isDarkTheme);
+        localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+    }, [isDarkTheme]);
+
+    const handleToggle = () => {
+        setIsDarkTheme(prevTheme => !prevTheme);
+    };
+
+    return (
+        <button onClick={handleToggle}>
+            {isDarkTheme ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
+        </button>
+    );
+};
+
+export default ThemeToggle;
+

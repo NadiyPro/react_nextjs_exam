@@ -5,6 +5,8 @@ import React from "react";
 import style from "@/moduleCSS/style.module.css";
 import MoviesList from "@/app/(way)/genre/movie/list/page";
 import Head from "next/head";
+import '../moduleCSS/globals.css';
+import ThemeToggle from "@/component/ThemeComponent";
 
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -27,11 +29,13 @@ export default function RootLayout({
           <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
           <link rel="manifest" href="/favicon/site.webmanifest"/>
       </Head>
-      <body className={style.div_body}>
+      <body className='div_body'>
       <div className={style.div_gallery}>
           <header>
               <div>
                   <h1 className={style.h1_layout}>MOVIE</h1>
+                  <ThemeToggle />
+                  {/*<button id='themToggle'>color</button>*/}
               </div>
               <nav className={style.div_genres}>
                   <MoviesList/>
