@@ -1,5 +1,6 @@
 /*****layout*****/
 .div_body{
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,12 +11,14 @@
     /*background-image: url("https://images.unsplash.com/photo-1513165533842-2a0dd8b51a74?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");*/
 }
 .div_gallery{
+    /*width: 10vw;*/
+    /*height: 60vh;*/
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 .div_children{
-    width: 70%;
+    width: 60vw;
     display: flex;
     min-height: 100vh;
     /*margin-right: 30px;*/
@@ -125,14 +128,14 @@
 
 /*****search***MovieSearchPage*****/
 .div_MovieSearchPage{
-    width: 95vw;
+    width: 60vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 .div_inner_MovieSearchPage{
-    min-width: 75vw;
+    min-width: 60vw;
     min-height: 100vh;
     display: flex;
     justify-content: space-evenly;
