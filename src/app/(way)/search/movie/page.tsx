@@ -29,7 +29,7 @@ console.log(search)
                                                                        src={baseImg + value.poster_path}
                                                                        alt={'image'}/></Link>
                                 <div>
-                                    <Link href={`/movie/${value.id}`} className='div_Lint_title_MovieSearchPage'>
+                                    <Link href={`/movie/${value.id}`} className='Link_MovieSearchPage'>
                                         <p className='p_MovieSearchPage'>{value.title}</p>
                                     </Link>
                                 </div>

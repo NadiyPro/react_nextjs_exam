@@ -2,14 +2,27 @@
     --background_image-light: url("https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     --background_image-dark: url("https://images.unsplash.com/photo-1513165533842-2a0dd8b51a74?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     --background_image: var(--background_image-light);
+    --background-color-light: rgba(245, 245, 245, 0.62);
+    --background-color-dark: rgba(37, 36, 36, 0.89);
+    --background-color: var(--background-color-light);
+    --background-color-light-2: rgba(245, 245, 245, 0.75);
+    --background-color-dark-2: rgba(37, 36, 36, 0.89);
+    --background-color-2: var(--background-color-light-2);
+    --color-light:black;
+    --color-dark: white;
+    --color: var(--color-light);
     color-scheme: light;
 }
 
 .dark-theme {
     --background_image: var(--background_image-dark);
+    --background-color: var(--background-color-dark);
+    --background-color-2: var(--background-color-dark-2);
+    --color:var(--color-dark);
     color-scheme: dark;
 }
 
+/*****layout*****/
 .div_body {
     min-height: 100vh;
     margin: 0;
@@ -21,10 +34,6 @@
     background-image: var(--background_image);
 }
 
-
-/***/
-
-/*****layout*****/
 .div_gallery{
     /*width: 10vw;*/
     /*height: 60vh;*/
@@ -40,7 +49,7 @@
     margin-left: 20px;
 }
 .h1_layout{
-    color: white;
+    color: var(--color);
 }
 /******MoviesPage*****/
 .div_MoviesPage{
@@ -58,7 +67,7 @@
     align-content: flex-start;
     /*flex-direction: column;*/
     flex-wrap: wrap;
-    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    background-color: var(--background-color); /*тема*/
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .div_img_title{
@@ -68,7 +77,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(245, 245, 245, 0.75); /*тема*/
+    background-color: var(--background-color); /*тема*/
     margin: 3px;
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
@@ -86,7 +95,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(245, 245, 245, 0.75);/*тема*/
+    background-color: var(--background-color);/*тема*/
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
     margin: 5px 0 5px 0;
 }
@@ -99,7 +108,7 @@
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .Link_MoviesPage{
-    color: black;/*тема*/
+    color: var(--color);/*тема*/
 }
 .Link_MoviesPage:hover{
     color: darkcyan;/*тема*/
@@ -111,7 +120,7 @@
     align-items: center;
     font-size: 15px;
     margin: 0;
-    color: black;/*тема*/
+    color: var(--color);/*тема*/
 }
 .p_MoviesPage:hover{
     color: darkcyan;/*тема*/
@@ -121,7 +130,7 @@
     width: 98%;
     height: 40px;
     margin: 10px;
-    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    background-color: var(--background-color); /*тема*/
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
     display: flex;
     justify-content: space-between;
@@ -156,7 +165,7 @@
     justify-content: space-evenly;
     align-content: flex-start;
     flex-wrap: wrap;
-    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    background-color: var(--background-color); /*тема*/
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .div_img_title_MovieSearchPage{
@@ -166,7 +175,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(245, 245, 245, 0.75); /*тема*/
+    background-color: var(--background-color); /*тема*/
     margin: 5px;
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
@@ -185,7 +194,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(245, 245, 245, 0.75);/*тема*/
+    background-color: var(--background-color);/*тема*/
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
     margin: 5px 0 5px 0;
 }
@@ -198,7 +207,7 @@
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .Link_MovieSearchPage{
-    color: black;/*тема*/
+    color: var(--color);/*тема*/
 }
 .Link_MovieSearchPage:hover{
     color: darkcyan;/*тема*/
@@ -210,10 +219,6 @@
     align-items: center;
     font-size: 15px;
     margin: 0;
-    color: black;/*тема*/
-}
-.p_MovieSearchPage:hover{
-    color: darkcyan;/*тема*/
 }
 .img_MovieSearchPage{
     width: 300px;
@@ -235,7 +240,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    background-color: var(--background-color); /*тема*/
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .div_MoviesList{
@@ -246,11 +251,11 @@
     margin: 5px;
 }
 .h3_genres{
-    color: black;/*тема*/
+    color: var(--color);/*тема*/
     text-align: center;
 }
 .Link_genres{
-    color: black;/*тема*/
+    color: var(--color);/*тема*/
 }
 .Link_genres:hover{
     color: darkcyan;/*тема*/
@@ -273,7 +278,7 @@
 /*******MovieInfo*****/
 .div_MovieInfo{
     min-height: 100%;
-    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    background-color: var(--background-color); /*тема*/
 }
 .div_inner_MovieInfo{
     /*height: 100%;*/
@@ -297,7 +302,7 @@
     height: 300px;
 }
 .div_h6_dop{
-    background-color: rgba(245, 245, 245, 0.75);
+    background-color: var(--background-color-2);
 }
 .div_overview_MovieInfo{
     display: flex;
@@ -322,7 +327,7 @@
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .Link_MovieInfo{
-    color: black;/*тема*/
+    color: var(--color);/*тема*/
 }
 .Link_MovieInfo:hover{
     color: darkcyan;/*тема*/
@@ -348,7 +353,7 @@
     align-content: flex-start;
     flex-direction: column;
     text-align: center;
-    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    background-color: var(--background-color); /*тема*/
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 .div_button_VideosPage{
@@ -357,7 +362,7 @@
     justify-content: center;
 }
 .Link_VideosPage{
-    color: black;/*тема*/
+    color: var(--color);/*тема*/
 }
 .Link_VideosPage:hover{
     color: darkcyan;/*тема*/
@@ -366,9 +371,6 @@
 .div_LoginPage_LoginPage{
     width: 80vw;
     height: 90vh;
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-content: center;*/
 }
 .div_LoginPage{
     height: 90%;
@@ -377,7 +379,7 @@
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    background-color: rgba(245, 245, 245, 0.62); /*тема*/
+    background-color: var(--background-color); /*тема*/
     box-shadow: 11px 5px 9px 1px rgba(0,0,0,0.81);/*тема*/
 }
 
